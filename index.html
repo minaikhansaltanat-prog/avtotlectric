@@ -1,0 +1,1566 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Автоэлектрик Алматы — выезд за 40 минут, круглосуточно</title>
+<meta name="description" content="Автоэлектрик в Алматы с выездом 24/7. Диагностика, аккумулятор, генератор, сигнализация, проводка, мультимедиа. Приедем за 40 минут в любой район города.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23F2B33D'%3E%3Cpath d='M13 2 3 14h7l-1 8 10-12h-7l1-8z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: {
+            950: '#060B14',
+            900: '#0B1220',
+            850: '#0E1729',
+            800: '#101B33',
+            700: '#16243F',
+            600: '#203355',
+            500: '#324A73',
+          },
+          gold: {
+            300: '#FAD98A',
+            400: '#F6C862',
+            500: '#F2B33D',
+            600: '#DC9A1E',
+            700: '#B57C14',
+          },
+          wa: {
+            DEFAULT: '#25D366',
+            dark: '#1DA851',
+          },
+        },
+        fontFamily: {
+          display: ['Manrope', 'PT Sans', 'sans-serif'],
+          body: ['PT Sans', 'Manrope', 'sans-serif'],
+        },
+        boxShadow: {
+          card: '0 1px 2px rgba(11,18,32,0.06), 0 12px 28px -12px rgba(11,18,32,0.18)',
+          'card-dark': '0 1px 0 rgba(255,255,255,0.04) inset, 0 20px 44px -18px rgba(0,0,0,0.55)',
+          gold: '0 10px 24px -8px rgba(242,179,61,0.45), 0 2px 6px rgba(242,179,61,0.25)',
+          'gold-lg': '0 18px 40px -12px rgba(242,179,61,0.4), 0 4px 14px rgba(0,0,0,0.25)',
+        },
+      },
+    },
+  };
+</script>
+<style>
+  :root{ color-scheme: dark; }
+  html, body {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+    width: 100%;
+    max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'PT Sans', 'Manrope', sans-serif;
+    background: #060B14;
+    position: relative;
+  }
+  h1, h2, h3, h4, .font-display { font-family: 'Manrope', 'PT Sans', sans-serif; }
+
+  ::selection { background: #F2B33D; color: #0B1220; }
+
+  /* grain texture overlay */
+  .grain { position: relative; isolation: isolate; }
+  .grain::before {
+    content: "";
+    position: absolute; inset: 0; z-index: 1;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid #F2B33D;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* fixed header offset */
+  .header-offset { padding-top: 108px; }
+  @media (max-width: 1023px) { .header-offset { padding-top: 68px; } }
+
+  /* mobile menu */
+  #mobileMenu {
+    transform: translateX(100%);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  #mobileMenu.open { transform: translateX(0); }
+  .hamburger-line { transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.25s ease; transform-origin: center; }
+  #hamburgerBtn.open .line-top { transform: translateY(7px) rotate(45deg); }
+  #hamburgerBtn.open .line-mid { opacity: 0; }
+  #hamburgerBtn.open .line-bot { transform: translateY(-7px) rotate(-45deg); }
+
+  /* carousel mechanics */
+  .car-viewport { overflow: hidden; touch-action: pan-y; }
+  .car-track { display: flex; will-change: transform; }
+  .car-slide { flex-shrink: 0; }
+
+  /* whatsapp pulse */
+  .wa-ring { position: absolute; inset: 0; border-radius: 9999px; animation: wa-pulse 2.4s cubic-bezier(0.22,0.61,0.36,1) infinite; }
+  .wa-ring.ring-2 { animation-delay: 0.8s; }
+  @keyframes wa-pulse {
+    0% { transform: scale(0.85); opacity: 0.55; }
+    70% { transform: scale(1.9); opacity: 0; }
+    100% { transform: scale(1.9); opacity: 0; }
+  }
+
+  /* accordion */
+  .faq-panel { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .faq-item.open .faq-panel { max-height: 480px; }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); }
+  .faq-chevron { transition: transform 0.3s ease; }
+
+  /* utility: hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  .lang-toggle-track { transition: background-color .25s ease; }
+  .lang-toggle-dot { transition: transform .3s cubic-bezier(0.34,1.56,0.64,1); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s cubic-bezier(0.16,1,0.3,1), transform .7s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  [id] { scroll-margin-top: 116px; }
+  @media (max-width: 1023px) { [id] { scroll-margin-top: 78px; } }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  @keyframes eq { 0%, 100% { transform: scaleY(0.35); } 50% { transform: scaleY(1); } }
+  .audio-bar { transform-origin: bottom; background-color: rgba(242,179,61,0.35); transition: background-color .2s ease; }
+  .playing .audio-bar { animation: eq 0.9s ease-in-out infinite; background-color: #F2B33D; }
+  .playing .audio-bar:nth-child(3n) { animation-duration: 1.15s; }
+  .playing .audio-bar:nth-child(3n+1) { animation-duration: 0.7s; }
+
+  #videoLightbox { background: rgba(6,11,20,0.92); backdrop-filter: blur(6px); }
+</style>
+</head>
+<body class="bg-navy-950 text-white font-body antialiased">
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-[60] w-full">
+  <!-- utility bar (desktop) -->
+  <div class="hidden lg:block bg-navy-950 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-9 text-xs text-white/60">
+      <div class="flex items-center gap-5">
+        <span class="flex items-center gap-1.5">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+          </span>
+          <span data-i18n="util.open">Работаем сейчас · 24/7</span>
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span data-i18n="util.coverage">Вся Алматы, выезд 40 минут</span>
+        </span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="text-white/50 hover:text-gold-500 transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+        </a>
+        <button id="langToggleDesktop" class="lang-toggle-track flex items-center gap-1 bg-white/5 hover:bg-white/10 rounded-full px-1 py-1 text-[11px] font-semibold tracking-wide" aria-label="Тілді ауыстыру / Переключить язык">
+          <span class="lang-opt px-2 py-0.5 rounded-full" data-lang-btn="ru">RU</span>
+          <span class="lang-opt px-2 py-0.5 rounded-full" data-lang-btn="kk">KZ</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- main nav -->
+  <div class="bg-navy-950/90 backdrop-blur-md border-b border-white/5 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.6)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 lg:h-[68px]">
+      <a href="#top" class="flex items-center gap-2.5 shrink-0 group">
+        <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 shadow-gold shrink-0">
+          <svg class="w-5.5 h-5.5 text-navy-950" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        </span>
+        <span class="leading-tight">
+          <span class="block font-display font-extrabold text-[15px] sm:text-base tracking-tight text-white">АвтоЭлектрик</span>
+          <span class="block text-[10px] sm:text-[11px] font-semibold text-gold-500 tracking-wide" data-i18n="header.city">Алматы · 24/7</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-8 font-display text-[14px] font-semibold text-white/75">
+        <a href="#services" class="hover:text-gold-500 transition-colors" data-i18n="nav.services">Услуги</a>
+        <a href="#prices" class="hover:text-gold-500 transition-colors" data-i18n="nav.prices">Цены</a>
+        <a href="#reviews" class="hover:text-gold-500 transition-colors" data-i18n="nav.reviews">Отзывы</a>
+        <a href="#blog" class="hover:text-gold-500 transition-colors" data-i18n="nav.blog">Блог</a>
+        <a href="#contact" class="hover:text-gold-500 transition-colors" data-i18n="nav.contact">Контакты</a>
+      </nav>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="tel:+77071099998" class="hidden md:flex flex-col items-end leading-tight mr-1 group">
+          <span class="text-[10px] uppercase tracking-wide text-white/45 font-semibold" data-i18n="header.callus">Звоните сейчас</span>
+          <span class="font-display font-extrabold text-[15px] text-white group-hover:text-gold-500 transition-colors">+7 707 109 9998</span>
+        </a>
+        <a href="#" data-wa-btn data-wa-msg="header.wamsg" class="hidden sm:inline-flex items-center gap-1.5 bg-wa hover:bg-wa-dark active:scale-[0.97] transition-all rounded-full pl-3 pr-4 py-2 text-[13px] font-bold shadow-[0_8px_20px_-8px_rgba(37,211,102,0.6)]">
+          <svg class="w-4 h-4" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.2 0 .1 7.1.1 15.9c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.2c2.3 1.3 4.9 1.9 7.6 1.9 8.8 0 15.9-7.1 15.9-15.9C31.9 7.1 24.8 0 16 0zm9.3 22.6c-.4 1.1-2.1 2-3.3 2.3-.9.2-2 .3-5.7-1.2-4.8-2-7.9-6.9-8.1-7.2-.2-.3-1.9-2.6-1.9-4.9s1.2-3.5 1.6-4c.4-.4.9-.6 1.2-.6h.9c.3 0 .6 0 .9.7.3.8 1.1 2.7 1.2 2.9.1.2.2.4 0 .7-.1.3-.2.4-.4.7-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.7 2.1 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.3-.4.5-.3.9-.2.4.2 2.5 1.2 2.9 1.4.4.2.7.3.8.5.1.2.1 1.1-.3 2.2z"/></svg>
+          WhatsApp
+        </a>
+        <button id="langToggleMobile" class="lg:hidden flex items-center gap-0.5 bg-white/5 rounded-full px-1 py-1 text-[10px] font-bold" aria-label="Тілді ауыстыру / Переключить язык">
+          <span class="lang-opt px-1.5 py-0.5 rounded-full" data-lang-btn="ru">RU</span>
+          <span class="lang-opt px-1.5 py-0.5 rounded-full" data-lang-btn="kk">KZ</span>
+        </button>
+        <button id="hamburgerBtn" class="lg:hidden relative w-10 h-10 flex items-center justify-center shrink-0" aria-label="Меню" aria-expanded="false">
+          <span class="sr-only">Меню</span>
+          <span class="hamburger-line line-top absolute w-5 h-[2px] bg-white rounded-full" style="top:14px;"></span>
+          <span class="hamburger-line line-mid absolute w-5 h-[2px] bg-white rounded-full" style="top:19px;"></span>
+          <span class="hamburger-line line-bot absolute w-5 h-[2px] bg-white rounded-full" style="top:24px;"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- mobile menu overlay -->
+<div id="mobileBackdrop" class="fixed inset-0 bg-navy-950/70 backdrop-blur-sm z-[65] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
+<div id="mobileMenu" class="fixed top-0 right-0 h-[100dvh] w-[82%] max-w-sm bg-navy-900 z-[70] lg:hidden shadow-2xl flex flex-col">
+  <div class="flex items-center justify-between h-16 px-5 border-b border-white/10">
+    <span class="font-display font-extrabold text-base" data-i18n="mobile.menu">Меню</span>
+    <button id="mobileCloseBtn" class="w-10 h-10 flex items-center justify-center" aria-label="Жабу / Закрыть">
+      <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <nav class="flex flex-col gap-1 px-5 pt-6 font-display font-bold text-lg overflow-y-auto">
+    <a href="#services" class="mobile-link py-3 border-b border-white/5 flex items-center justify-between" data-i18n="nav.services">Услуги</a>
+    <a href="#prices" class="mobile-link py-3 border-b border-white/5 flex items-center justify-between" data-i18n="nav.prices">Цены</a>
+    <a href="#reviews" class="mobile-link py-3 border-b border-white/5 flex items-center justify-between" data-i18n="nav.reviews">Отзывы</a>
+    <a href="#gallery" class="mobile-link py-3 border-b border-white/5 flex items-center justify-between" data-i18n="nav.gallery">Галерея</a>
+    <a href="#blog" class="mobile-link py-3 border-b border-white/5 flex items-center justify-between" data-i18n="nav.blog">Блог</a>
+    <a href="#contact" class="mobile-link py-3 border-b border-white/5 flex items-center justify-between" data-i18n="nav.contact">Контакты</a>
+  </nav>
+  <div class="mt-auto p-5 space-y-3">
+    <div class="flex items-center gap-1.5 text-xs text-white/50 mb-1">
+      <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span></span>
+      <span data-i18n="util.open">Работаем сейчас · 24/7</span>
+    </div>
+    <a href="tel:+77071099998" class="flex items-center justify-center gap-2 w-full rounded-xl bg-white/10 hover:bg-white/15 py-3 font-display font-bold text-sm transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      +7 707 109 9998
+    </a>
+    <a href="#" data-wa-btn data-wa-msg="header.wamsg" class="flex items-center justify-center gap-2 w-full rounded-xl bg-wa hover:bg-wa-dark py-3 font-display font-bold text-sm transition-colors">
+      <svg class="w-4 h-4" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.2 0 .1 7.1.1 15.9c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.2c2.3 1.3 4.9 1.9 7.6 1.9 8.8 0 15.9-7.1 15.9-15.9C31.9 7.1 24.8 0 16 0zm9.3 22.6c-.4 1.1-2.1 2-3.3 2.3-.9.2-2 .3-5.7-1.2-4.8-2-7.9-6.9-8.1-7.2-.2-.3-1.9-2.6-1.9-4.9s1.2-3.5 1.6-4c.4-.4.9-.6 1.2-.6h.9c.3 0 .6 0 .9.7.3.8 1.1 2.7 1.2 2.9.1.2.2.4 0 .7-.1.3-.2.4-.4.7-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.7 2.1 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.3-.4.5-.3.9-.2.4.2 2.5 1.2 2.9 1.4.4.2.7.3.8.5.1.2.1 1.1-.3 2.2z"/></svg>
+      <span data-i18n="header.write_wa">Написать в WhatsApp</span>
+    </a>
+  </div>
+</div>
+
+<div id="top"></div>
+<main class="header-offset">
+
+<!-- ============ HERO ============ -->
+<section class="relative min-h-[92vh] flex items-end overflow-hidden grain">
+  <div class="absolute inset-0 z-0">
+    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" poster="Photo/8d0db3f7d724d731cab24a7f2514c686.jpg">
+      <source src="ava9.mp4" type="video/mp4">
+    </video>
+    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/70 to-navy-950/35"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/10 to-navy-950/60"></div>
+    <div class="absolute inset-0" style="background: radial-gradient(60% 50% at 15% 90%, rgba(242,179,61,0.14), transparent), radial-gradient(45% 40% at 90% 10%, rgba(32,51,85,0.5), transparent);"></div>
+  </div>
+
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-40 pb-12 sm:pb-16 lg:pb-20">
+    <div class="grid lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-14 items-end">
+      <div class="reveal">
+        <span class="inline-flex items-center gap-2 bg-gold-500/15 border border-gold-500/40 text-gold-400 text-[12px] sm:text-[13px] font-bold tracking-wide rounded-full px-4 py-1.5 mb-6" data-i18n="hero.badge">500+ восстановленных авто по Алматы</span>
+        <h1 class="font-display font-extrabold text-white leading-[1.05] tracking-tight text-[34px] sm:text-5xl lg:text-[56px]">
+          <span class="block" data-i18n="hero.h1a">Автоэлектрик в Алматы:</span>
+          <span class="block text-gold-500" data-i18n="hero.h1b">приедем за 40 минут и устраним неисправность на месте</span>
+        </h1>
+        <p class="mt-5 sm:mt-6 text-white/75 text-base sm:text-lg max-w-xl leading-[1.7]" data-i18n="hero.sub">Диагностика · аккумулятор · генератор · сигнализация · проводка · мультимедиа. Выезжаем в любой район города круглосуточно.</p>
+
+        <div class="mt-7 sm:mt-8 flex flex-wrap items-center gap-3 sm:gap-4">
+          <a href="#" data-wa-btn data-wa-msg="hero.wamsg" class="inline-flex items-center gap-2 bg-gradient-to-br from-gold-400 to-gold-600 text-navy-950 font-display font-extrabold text-[15px] rounded-full px-6 sm:px-7 py-3.5 sm:py-4 shadow-gold-lg hover:brightness-110 active:scale-[0.97] transition-all">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span data-i18n="hero.cta1">Вызвать мастера</span>
+          </a>
+          <a href="#prices" class="inline-flex items-center gap-2 border-2 border-white/25 hover:border-gold-500/60 hover:bg-white/5 text-white font-display font-bold text-[15px] rounded-full px-6 sm:px-7 py-3.5 sm:py-4 transition-all">
+            <span data-i18n="hero.cta2">Смотреть цены</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+
+        <div class="mt-9 sm:mt-10 flex flex-wrap gap-x-8 gap-y-3">
+          <div class="flex items-center gap-2.5">
+            <span class="text-2xl sm:text-3xl font-display font-extrabold text-gold-500">40<span class="text-sm align-top ml-0.5" data-i18n="hero.min">мин</span></span>
+            <span class="text-[12px] text-white/55 leading-tight max-w-[92px]" data-i18n="hero.stat1">среднее время выезда</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-2xl sm:text-3xl font-display font-extrabold text-gold-500">8<span class="text-sm align-top ml-0.5" data-i18n="hero.years">лет</span></span>
+            <span class="text-[12px] text-white/55 leading-tight max-w-[92px]" data-i18n="hero.stat2">опыта на дорогах Алматы</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="text-2xl sm:text-3xl font-display font-extrabold text-gold-500">24/7</span>
+            <span class="text-[12px] text-white/55 leading-tight max-w-[92px]" data-i18n="hero.stat3">без выходных и праздников</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal w-full max-w-md lg:max-w-none lg:justify-self-end">
+        <form id="heroForm" class="bg-navy-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-5 sm:p-6 shadow-card-dark">
+          <h3 class="font-display font-extrabold text-lg text-white mb-1" data-i18n="hero.formTitle">Оставьте заявку</h3>
+          <p class="text-white/55 text-[13px] mb-4" data-i18n="hero.formSub">Перезвоним в течение 5 минут</p>
+          <div class="space-y-3">
+            <input required type="text" name="name" data-i18n-placeholder="hero.formName" placeholder="Ваше имя" class="w-full bg-white/5 border border-white/10 focus:border-gold-500/60 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-colors">
+            <input required type="tel" name="phone" data-i18n-placeholder="hero.formPhone" placeholder="+7 (___) ___-__-__" class="w-full bg-white/5 border border-white/10 focus:border-gold-500/60 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/35 outline-none transition-colors">
+          </div>
+          <button type="submit" class="mt-4 w-full inline-flex items-center justify-center gap-2 bg-gradient-to-br from-gold-400 to-gold-600 text-navy-950 font-display font-extrabold text-sm rounded-xl py-3.5 shadow-gold hover:brightness-110 active:scale-[0.98] transition-all">
+            <span data-i18n="hero.formSubmit">Отправить заявку</span>
+          </button>
+          <p class="text-white/35 text-[11px] mt-3 text-center leading-snug" data-i18n="hero.formNote">Нажимая кнопку, вы соглашаетесь с политикой обработки данных</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section class="bg-navy-900 border-y border-white/5 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div class="reveal flex items-center gap-3 sm:gap-4 bg-white/[0.03] border border-white/5 rounded-2xl px-4 sm:px-5 py-4 sm:py-5">
+        <svg class="w-8 h-8 sm:w-9 sm:h-9 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 8v4l3 3M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="font-display font-extrabold text-xl sm:text-2xl text-white leading-none">8</div><div class="text-[11px] sm:text-xs text-white/55 mt-1" data-i18n="trust.stat1">лет опыта</div></div>
+      </div>
+      <div class="reveal flex items-center gap-3 sm:gap-4 bg-white/[0.03] border border-white/5 rounded-2xl px-4 sm:px-5 py-4 sm:py-5">
+        <svg class="w-8 h-8 sm:w-9 sm:h-9 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 17h2l-2-6H5l-2 6h2m14 0v2a1 1 0 0 1-1 1h-1a1 1 0 0 1-1-1v-2m-10 0v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2m14 0H5m1-6 1.5-4.5A2 2 0 0 1 9.4 5h5.2a2 2 0 0 1 1.9 1.5L18 11" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="font-display font-extrabold text-xl sm:text-2xl text-white leading-none">500+</div><div class="text-[11px] sm:text-xs text-white/55 mt-1" data-i18n="trust.stat2">авто отремонтировано</div></div>
+      </div>
+      <div class="reveal flex items-center gap-3 sm:gap-4 bg-white/[0.03] border border-white/5 rounded-2xl px-4 sm:px-5 py-4 sm:py-5">
+        <svg class="w-8 h-8 sm:w-9 sm:h-9 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 14h7l-1 8 10-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="font-display font-extrabold text-xl sm:text-2xl text-white leading-none">40 <span data-i18n="hero.min">мин</span></div><div class="text-[11px] sm:text-xs text-white/55 mt-1" data-i18n="trust.stat3">среднее время выезда</div></div>
+      </div>
+      <div class="reveal flex items-center gap-3 sm:gap-4 bg-white/[0.03] border border-white/5 rounded-2xl px-4 sm:px-5 py-4 sm:py-5">
+        <svg class="w-8 h-8 sm:w-9 sm:h-9 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="font-display font-extrabold text-xl sm:text-2xl text-white leading-none" data-i18n="trust.stat4num">до 6 мес.</div><div class="text-[11px] sm:text-xs text-white/55 mt-1" data-i18n="trust.stat4">гарантии на работу</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAIN POINTS ============ -->
+<section class="bg-navy-950 py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+      <span class="text-gold-500 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="pain.kicker">Знакомо?</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-white mt-2 tracking-tight" data-i18n="pain.title">Знакомая ситуация?</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
+      <a href="#services" class="reveal group bg-navy-900 border border-white/5 hover:border-gold-500/40 rounded-2xl p-5 flex flex-col gap-4 transition-colors">
+        <svg class="w-7 h-7 text-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="text-sm text-white/80 leading-snug" data-i18n="pain.item1">Утром машина не заводится</p>
+        <span class="mt-auto flex items-center gap-1 text-[12px] font-bold text-gold-500 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="pain.cta">Узнать решение →</span>
+      </a>
+      <a href="#services" class="reveal group bg-navy-900 border border-white/5 hover:border-gold-500/40 rounded-2xl p-5 flex flex-col gap-4 transition-colors">
+        <svg class="w-7 h-7 text-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="text-sm text-white/80 leading-snug" data-i18n="pain.item2">На панели горит Check Engine</p>
+        <span class="mt-auto flex items-center gap-1 text-[12px] font-bold text-gold-500 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="pain.cta">Узнать решение →</span>
+      </a>
+      <a href="#services" class="reveal group bg-navy-900 border border-white/5 hover:border-gold-500/40 rounded-2xl p-5 flex flex-col gap-4 transition-colors">
+        <svg class="w-7 h-7 text-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18h6M10 3h4l1 4h-6l1-4zM7 7h10l1 6a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4l1-6z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="text-sm text-white/80 leading-snug" data-i18n="pain.item3">Фары или поворотники не работают</p>
+        <span class="mt-auto flex items-center gap-1 text-[12px] font-bold text-gold-500 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="pain.cta">Узнать решение →</span>
+      </a>
+      <a href="#services" class="reveal group bg-navy-900 border border-white/5 hover:border-gold-500/40 rounded-2xl p-5 flex flex-col gap-4 transition-colors">
+        <svg class="w-7 h-7 text-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 12.5 11 14l3.5-3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="text-sm text-white/80 leading-snug" data-i18n="pain.item4">Сигнализация включается сама</p>
+        <span class="mt-auto flex items-center gap-1 text-[12px] font-bold text-gold-500 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="pain.cta">Узнать решение →</span>
+      </a>
+      <a href="#services" class="reveal group bg-navy-900 border border-white/5 hover:border-gold-500/40 rounded-2xl p-5 flex flex-col gap-4 transition-colors">
+        <svg class="w-7 h-7 text-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M11 5 6 9H2v6h4l5 4V5zM19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p class="text-sm text-white/80 leading-snug" data-i18n="pain.item5">Пропал звук в мультимедиа</p>
+        <span class="mt-auto flex items-center gap-1 text-[12px] font-bold text-gold-500 opacity-0 group-hover:opacity-100 transition-opacity" data-i18n="pain.cta">Узнать решение →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="bg-white text-navy-900 py-16 sm:py-24 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+      <span class="text-gold-600 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="services.kicker">Что мы делаем</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-navy-900 mt-2 tracking-tight" data-i18n="services.title">Наши услуги</h2>
+      <p class="text-navy-500 mt-3 leading-[1.7]" data-i18n="services.subtitle">От экспресс-диагностики до сложного ремонта проводки — работаем с любой маркой авто</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+      <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.diag.title">Компьютерная диагностика</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.diag.desc">Проверка всех блоков ECU, считывание кодов ошибок дилерским сканером Autel/Launch</p>
+        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.diag.price">от 5 000 ₸</span>
+      </div>
+      <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 8h5l2-3 2 6 2-3h5M4 12h16M6 16h2m4 0h6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.wiring.title">Электропроводка</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.wiring.desc">Поиск и устранение короткого замыкания, окисления и повреждённых проводов</p>
+        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.wiring.price">от 8 000 ₸</span>
+      </div>
+      <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="7" y="6" width="10" height="15" rx="1.5"/><path d="M10 6V4h4v2M9.5 12.5 11 14l3.5-3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.battery.title">Аккумулятор</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.battery.desc">Проверка, зарядка, замена, прикуривание на месте в любое время суток</p>
+        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.battery.price">от 3 000 ₸</span>
+      </div>
+      <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.gen.title">Генератор и стартер</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.gen.desc">Ремонт, восстановление и замена генератора и стартера любой сложности</p>
+        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.gen.price">Цена после диагностики</span>
+      </div>
+      <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 12.5 11 14l3.5-3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.alarm.title">Сигнализация и иммобилайзер</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.alarm.desc">Установка, настройка, программирование ключ-карт для любых марок</p>
+        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.alarm.price">от 25 000 ₸</span>
+      </div>
+      <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 3h4l1 4h-6l1-4zM7 7h10l1 6a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4l1-6z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.light.title">Световая система</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.light.desc">Фары, ксенон/LED, регулировка света и установка дополнительной оптики</p>
+        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.light.price">Цена после диагностики</span>
+      </div>
+      <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="8" cy="12" r="1.6"/><path d="M13 10h5M13 14h5" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.media.title">Мультимедиа и аудио</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.media.desc">Магнитола, камера заднего вида, парктроник — подбор и установка</p>
+        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.media.price">Цена после диагностики</span>
+      </div>
+      <div class="reveal group bg-navy-900 hover:bg-navy-800 border border-navy-900 rounded-2xl p-5 sm:p-6 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-gold-500 flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-navy-900" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2 3 14h7l-1 8 10-12h-7l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-[15px] text-white mb-1.5" data-i18n="svc.sos.title">Срочный выезд 24/7</h3>
+        <p class="text-[13px] text-white/60 leading-[1.6] mb-3" data-i18n="svc.sos.desc">Выезжаем в любой район Алматы круглосуточно, без выходных</p>
+        <span class="font-display font-extrabold text-gold-500 text-sm" data-i18n="svc.sos.price">от 40 минут</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="bg-[#F7F8FB] text-navy-900 py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-16 reveal">
+      <span class="text-gold-600 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="process.kicker">Просто и быстро</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-navy-900 mt-2 tracking-tight" data-i18n="process.title">Как мы работаем</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
+      <div class="hidden lg:block absolute top-7 left-[12%] right-[12%] h-[2px] bg-gradient-to-r from-navy-900/10 via-gold-500/40 to-navy-900/10"></div>
+      <div class="reveal relative text-center lg:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-500 font-display font-extrabold text-xl flex items-center justify-center mx-auto lg:mx-0 mb-4 shadow-card relative z-10">01</div>
+        <h3 class="font-display font-bold text-[15px] mb-1.5" data-i18n="process.s1.title">Звоните или пишете</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="process.s1.desc">Описываете проблему по телефону или в WhatsApp</p>
+      </div>
+      <div class="reveal relative text-center lg:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-500 font-display font-extrabold text-xl flex items-center justify-center mx-auto lg:mx-0 mb-4 shadow-card relative z-10">02</div>
+        <h3 class="font-display font-bold text-[15px] mb-1.5" data-i18n="process.s2.title">Мастер выезжает</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="process.s2.desc">Приезжаем за 40–60 минут или принимаем у себя</p>
+      </div>
+      <div class="reveal relative text-center lg:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-navy-900 text-gold-500 font-display font-extrabold text-xl flex items-center justify-center mx-auto lg:mx-0 mb-4 shadow-card relative z-10">03</div>
+        <h3 class="font-display font-bold text-[15px] mb-1.5" data-i18n="process.s3.title">Диагностика и цена</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="process.s3.desc">Называем точную стоимость, вы принимаете решение</p>
+      </div>
+      <div class="reveal relative text-center lg:text-left">
+        <div class="w-14 h-14 rounded-2xl bg-gold-500 text-navy-900 font-display font-extrabold text-xl flex items-center justify-center mx-auto lg:mx-0 mb-4 shadow-gold relative z-10">04</div>
+        <h3 class="font-display font-bold text-[15px] mb-1.5" data-i18n="process.s4.title">Ремонт и гарантия</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="process.s4.desc">Устраняем неисправность и выдаём гарантийный талон</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICES ============ -->
+<section id="prices" class="bg-navy-950 py-16 sm:py-24 scroll-mt-20 grain">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+      <span class="text-gold-500 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="prices.kicker">Прозрачно</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-white mt-2 tracking-tight" data-i18n="prices.title">Цены на услуги</h2>
+      <p class="text-white/60 mt-3 leading-[1.7]" data-i18n="prices.subtitle">Ориентировочные цены «от». Точная стоимость называется на месте после бесплатной диагностики</p>
+    </div>
+
+    <div class="bg-navy-900 border border-white/10 rounded-3xl overflow-hidden shadow-card-dark reveal">
+      <div class="divide-y divide-white/5">
+        <div class="flex items-center justify-between px-5 sm:px-8 py-5">
+          <span class="text-[14px] sm:text-[15px] font-semibold text-white/90" data-i18n="svc.diag.title">Компьютерная диагностика</span>
+          <span class="font-display font-extrabold text-gold-500 text-[15px] sm:text-base whitespace-nowrap ml-4" data-i18n="svc.diag.price">от 5 000 ₸</span>
+        </div>
+        <div class="flex items-center justify-between px-5 sm:px-8 py-5">
+          <span class="text-[14px] sm:text-[15px] font-semibold text-white/90" data-i18n="prices.row2">Проверка / зарядка аккумулятора</span>
+          <span class="font-display font-extrabold text-gold-500 text-[15px] sm:text-base whitespace-nowrap ml-4" data-i18n="svc.battery.price">от 3 000 ₸</span>
+        </div>
+        <div class="flex items-center justify-between px-5 sm:px-8 py-5">
+          <span class="text-[14px] sm:text-[15px] font-semibold text-white/90" data-i18n="prices.row3">Устранение неисправности проводки</span>
+          <span class="font-display font-extrabold text-gold-500 text-[15px] sm:text-base whitespace-nowrap ml-4" data-i18n="svc.wiring.price">от 8 000 ₸</span>
+        </div>
+        <div class="flex items-center justify-between px-5 sm:px-8 py-5">
+          <span class="text-[14px] sm:text-[15px] font-semibold text-white/90" data-i18n="svc.alarm.title">Установка сигнализации</span>
+          <span class="font-display font-extrabold text-gold-500 text-[15px] sm:text-base whitespace-nowrap ml-4" data-i18n="svc.alarm.price">от 25 000 ₸</span>
+        </div>
+        <div class="flex items-center justify-between px-5 sm:px-8 py-5 bg-white/[0.02]">
+          <span class="text-[14px] sm:text-[15px] font-semibold text-white/70" data-i18n="prices.row5">Генератор, стартер, свет, мультимедиа</span>
+          <span class="font-display font-bold text-white/50 text-[13px] sm:text-sm whitespace-nowrap ml-4" data-i18n="prices.onrequest">по диагностике</span>
+        </div>
+      </div>
+      <div class="bg-gradient-to-r from-navy-800 to-navy-700 px-5 sm:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-white/60 text-[13px] text-center sm:text-left" data-i18n="prices.note">*Точная цена зависит от марки и модели авто, уточняется мастером на месте</p>
+        <a href="#" data-wa-btn data-wa-msg="prices.wamsg" class="shrink-0 inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-950 font-display font-extrabold text-sm rounded-full px-6 py-3 shadow-gold transition-all active:scale-[0.97] whitespace-nowrap">
+          <span data-i18n="prices.cta">Узнать точную цену</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASES ============ -->
+<section class="bg-white text-navy-900 py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+      <span class="text-gold-600 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="cases.kicker">Реальные примеры</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-navy-900 mt-2 tracking-tight" data-i18n="cases.title">Кейсы: до и после</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5 sm:gap-6">
+      <div class="reveal rounded-2xl overflow-hidden border border-navy-900/5 shadow-card group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="Photo/8d0db3f7d724d731cab24a7f2514c686.jpg" alt="Toyota Camry — диагностика аккумулятора" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 to-transparent mix-blend-multiply"></div>
+          <span class="absolute top-3 left-3 bg-gold-500 text-navy-950 text-[11px] font-display font-extrabold px-3 py-1 rounded-full">Toyota Camry</span>
+        </div>
+        <div class="p-5">
+          <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="cases.c1">Клиента 2 недели «диагностировали» в трёх сервисах — мы нашли неисправность проводки за 40 минут выездной диагностики.</p>
+        </div>
+      </div>
+      <div class="reveal rounded-2xl overflow-hidden border border-navy-900/5 shadow-card group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="Photo/f1201902a6617881cbe31467ebb96e6e.jpg" alt="Ремонт электропроводки" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 to-transparent mix-blend-multiply"></div>
+          <span class="absolute top-3 left-3 bg-gold-500 text-navy-950 text-[11px] font-display font-extrabold px-3 py-1 rounded-full">Hyundai Tucson</span>
+        </div>
+        <div class="p-5">
+          <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="cases.c2">Периодически пропадала мультимедиа и подсветка панели — оказалось окисление массы. Устранили за один выезд.</p>
+        </div>
+      </div>
+      <div class="reveal rounded-2xl overflow-hidden border border-navy-900/5 shadow-card group">
+        <div class="relative h-48 overflow-hidden">
+          <img src="Photo/257c38ab42bea4d7bdbdb8b9f8016b4c.jpg" alt="Диагностика с планшетом" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950/80 to-transparent mix-blend-multiply"></div>
+          <span class="absolute top-3 left-3 bg-gold-500 text-navy-950 text-[11px] font-display font-extrabold px-3 py-1 rounded-full">Lexus RX</span>
+        </div>
+        <div class="p-5">
+          <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="cases.c3">Сигнализация срабатывала произвольно по ночам. Перепрограммировали блок и настроили чувствительность датчиков.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GUARANTEES + TEAM ============ -->
+<section class="bg-[#F7F8FB] text-navy-900 py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div class="reveal">
+      <span class="text-gold-600 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="guar.kicker">Надёжность</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-navy-900 mt-2 mb-6 tracking-tight" data-i18n="guar.title">Гарантии и сертификаты</h2>
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <span class="w-10 h-10 rounded-xl bg-navy-900 text-gold-500 flex items-center justify-center shrink-0"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><h4 class="font-display font-bold text-[15px] mb-0.5" data-i18n="guar.i1.title">Гарантия до 6 месяцев</h4><p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="guar.i1.desc">Отдельно на работу и на установленные запчасти</p></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="w-10 h-10 rounded-xl bg-navy-900 text-gold-500 flex items-center justify-center shrink-0"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6" stroke-linecap="round"/></svg></span>
+          <div><h4 class="font-display font-bold text-[15px] mb-0.5" data-i18n="guar.i2.title">Дилерский уровень диагностики</h4><p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="guar.i2.desc">Сканеры Autel и Launch — точное определение неисправности</p></div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="w-10 h-10 rounded-xl bg-navy-900 text-gold-500 flex items-center justify-center shrink-0"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div><h4 class="font-display font-bold text-[15px] mb-0.5" data-i18n="guar.i3.title">Наряд-заказ на каждую работу</h4><p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="guar.i3.desc">Письменное подтверждение цены и перечня работ</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal bg-navy-900 rounded-3xl p-6 sm:p-8 shadow-card-dark relative overflow-hidden">
+      <div class="absolute -right-10 -top-10 w-40 h-40 bg-gold-500/10 rounded-full blur-2xl"></div>
+      <div class="flex items-center gap-4 relative">
+        <img src="Photo/f1201902a6617881cbe31467ebb96e6e.jpg" alt="Мастер автоэлектрик" class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover ring-2 ring-gold-500/40">
+        <div>
+          <h4 class="font-display font-extrabold text-white text-lg" data-i18n="team.name">Ерлан Т.</h4>
+          <p class="text-gold-500 text-[13px] font-semibold" data-i18n="team.role">Ведущий автоэлектрик · 8 лет опыта</p>
+          <div class="flex gap-0.5 mt-1.5">
+            <svg class="w-3.5 h-3.5 text-gold-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg class="w-3.5 h-3.5 text-gold-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg class="w-3.5 h-3.5 text-gold-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg class="w-3.5 h-3.5 text-gold-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg class="w-3.5 h-3.5 text-gold-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+        </div>
+      </div>
+      <p class="text-white/60 text-[13px] leading-[1.7] mt-5 relative" data-i18n="team.bio">Специализация — японские и корейские автомобили. Работал в дилерских центрах, сейчас выезжаю к клиентам напрямую — без наценки за автосервис.</p>
+      <a href="#" data-wa-btn data-wa-msg="team.wamsg" class="relative mt-5 inline-flex items-center gap-2 text-gold-500 font-display font-bold text-sm hover:text-gold-400 transition-colors">
+        <span data-i18n="team.cta">Написать мастеру</span>
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews" class="bg-navy-950 py-16 sm:py-24 scroll-mt-20 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-10 reveal">
+      <span class="text-gold-500 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="reviews.kicker">Нам доверяют</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-white mt-2 tracking-tight" data-i18n="reviews.title">Отзывы наших клиентов</h2>
+    </div>
+
+    <div class="flex items-center justify-center gap-2 mb-8 sm:mb-10 reveal">
+      <button data-review-tab="video" class="review-tab active-tab inline-flex items-center gap-2 rounded-full px-4 sm:px-5 py-2.5 text-[13px] font-display font-bold transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        <span data-i18n="reviews.tabvideo">Видео</span>
+      </button>
+      <button data-review-tab="text" class="review-tab inline-flex items-center gap-2 rounded-full px-4 sm:px-5 py-2.5 text-[13px] font-display font-bold transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>
+        <span data-i18n="reviews.tabtext">Текст</span>
+      </button>
+      <button data-review-tab="audio" class="review-tab inline-flex items-center gap-2 rounded-full px-4 sm:px-5 py-2.5 text-[13px] font-display font-bold transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/></svg>
+        <span data-i18n="reviews.tabaudio">Аудио</span>
+      </button>
+    </div>
+
+    <div class="relative reveal">
+      <div id="panel-video" class="review-panel">
+        <div class="relative">
+          <div id="carousel-video" class="car-viewport"><div class="car-track" id="track-video"></div></div>
+          <button data-car-prev="video" aria-label="Назад" class="car-arrow absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-900/90 border border-white/10 hover:bg-gold-500 hover:text-navy-950 hover:border-gold-500 flex items-center justify-center transition-all backdrop-blur-sm"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button data-car-next="video" aria-label="Вперёд" class="car-arrow absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-900/90 border border-white/10 hover:bg-gold-500 hover:text-navy-950 hover:border-gold-500 flex items-center justify-center transition-all backdrop-blur-sm"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div id="panel-text" class="review-panel hidden">
+        <div class="relative">
+          <div id="carousel-text" class="car-viewport"><div class="car-track" id="track-text"></div></div>
+          <button data-car-prev="text" aria-label="Назад" class="car-arrow absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-900/90 border border-white/10 hover:bg-gold-500 hover:text-navy-950 hover:border-gold-500 flex items-center justify-center transition-all backdrop-blur-sm"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button data-car-next="text" aria-label="Вперёд" class="car-arrow absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-900/90 border border-white/10 hover:bg-gold-500 hover:text-navy-950 hover:border-gold-500 flex items-center justify-center transition-all backdrop-blur-sm"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div id="panel-audio" class="review-panel hidden">
+        <div class="relative">
+          <div id="carousel-audio" class="car-viewport"><div class="car-track" id="track-audio"></div></div>
+          <button data-car-prev="audio" aria-label="Назад" class="car-arrow absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-900/90 border border-white/10 hover:bg-gold-500 hover:text-navy-950 hover:border-gold-500 flex items-center justify-center transition-all backdrop-blur-sm"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button data-car-next="audio" aria-label="Вперёд" class="car-arrow absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-900/90 border border-white/10 hover:bg-gold-500 hover:text-navy-950 hover:border-gold-500 flex items-center justify-center transition-all backdrop-blur-sm"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="bg-navy-900 py-16 sm:py-24 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+      <span class="text-gold-500 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="gallery.kicker">С выездов</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-white mt-2 tracking-tight" data-i18n="gallery.title">Фотогалерея работ</h2>
+    </div>
+    <div class="relative reveal">
+      <div id="carousel-gallery" class="car-viewport"><div class="car-track" id="track-gallery"></div></div>
+      <button data-car-prev="gallery" aria-label="Назад" class="car-arrow absolute left-0 sm:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-950/90 border border-white/10 hover:bg-gold-500 hover:text-navy-950 hover:border-gold-500 flex items-center justify-center transition-all backdrop-blur-sm"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <button data-car-next="gallery" aria-label="Вперёд" class="car-arrow absolute right-0 sm:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-navy-950/90 border border-white/10 hover:bg-gold-500 hover:text-navy-950 hover:border-gold-500 flex items-center justify-center transition-all backdrop-blur-sm"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COVERAGE ============ -->
+<section id="coverage" class="bg-[#F7F8FB] text-navy-900 py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <span class="text-gold-600 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="coverage.kicker">Зона выезда</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-navy-900 mt-2 mb-5 tracking-tight" data-i18n="coverage.title">Выезжаем по всей Алматы</h2>
+      <p class="text-navy-500 leading-[1.7] mb-6" data-i18n="coverage.desc">Работаем во всех районах города. Среднее время прибытия мастера — 40–60 минут после звонка.</p>
+      <div class="grid grid-cols-2 gap-2.5">
+        <span class="flex items-center gap-2 bg-white border border-navy-900/8 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold"><svg class="w-4 h-4 text-gold-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="coverage.d1">Алмалы</span></span>
+        <span class="flex items-center gap-2 bg-white border border-navy-900/8 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold"><svg class="w-4 h-4 text-gold-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="coverage.d2">Бостандыкский</span></span>
+        <span class="flex items-center gap-2 bg-white border border-navy-900/8 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold"><svg class="w-4 h-4 text-gold-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="coverage.d3">Медеуский</span></span>
+        <span class="flex items-center gap-2 bg-white border border-navy-900/8 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold"><svg class="w-4 h-4 text-gold-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="coverage.d4">Ауэзовский</span></span>
+        <span class="flex items-center gap-2 bg-white border border-navy-900/8 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold"><svg class="w-4 h-4 text-gold-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="coverage.d5">Турксибский</span></span>
+        <span class="flex items-center gap-2 bg-white border border-navy-900/8 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold"><svg class="w-4 h-4 text-gold-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="coverage.d6">Жетысуский</span></span>
+        <span class="flex items-center gap-2 bg-white border border-navy-900/8 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold"><svg class="w-4 h-4 text-gold-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="coverage.d7">Наурызбайский</span></span>
+        <span class="flex items-center gap-2 bg-white border border-navy-900/8 rounded-xl px-3.5 py-2.5 text-[13px] font-semibold"><svg class="w-4 h-4 text-gold-600 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="coverage.d8">Алатауский</span></span>
+      </div>
+    </div>
+    <div class="reveal relative h-72 sm:h-96 rounded-3xl overflow-hidden border border-navy-900/10 shadow-card bg-navy-900">
+      <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(circle, rgba(242,179,61,0.4) 1px, transparent 1px); background-size: 22px 22px;"></div>
+      <div class="absolute inset-0" style="background: radial-gradient(50% 50% at 30% 40%, rgba(242,179,61,0.18), transparent), radial-gradient(40% 40% at 75% 65%, rgba(32,51,85,0.6), transparent);"></div>
+      <span class="absolute top-[28%] left-[32%] w-3 h-3 rounded-full bg-gold-500 shadow-gold animate-pulse"></span>
+      <span class="absolute top-[55%] left-[58%] w-3 h-3 rounded-full bg-gold-500 shadow-gold animate-pulse" style="animation-delay:.4s"></span>
+      <span class="absolute top-[68%] left-[25%] w-3 h-3 rounded-full bg-gold-500 shadow-gold animate-pulse" style="animation-delay:.8s"></span>
+      <span class="absolute top-[35%] left-[75%] w-3 h-3 rounded-full bg-gold-500 shadow-gold animate-pulse" style="animation-delay:1.2s"></span>
+      <div class="absolute bottom-4 left-4 right-4 bg-navy-950/80 backdrop-blur-sm rounded-xl px-4 py-3 flex items-center gap-2">
+        <svg class="w-5 h-5 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <span class="text-white text-[13px] font-semibold" data-i18n="coverage.maplabel">г. Алматы — вся зона обслуживания</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="bg-navy-950 py-16 sm:py-24">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10 sm:mb-14 reveal">
+      <span class="text-gold-500 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="faq.kicker">Вопросы</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-white mt-2 tracking-tight" data-i18n="faq.title">Частые вопросы</h2>
+    </div>
+    <div class="space-y-3 reveal">
+      <div class="faq-item bg-navy-900 border border-white/5 rounded-2xl overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left">
+          <span class="font-display font-bold text-[14px] sm:text-[15px] text-white" data-i18n="faq.q1">Диагностика платная? Она входит в стоимость ремонта?</span>
+          <svg class="faq-chevron w-5 h-5 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-panel px-5 sm:px-6"><p class="text-[13px] sm:text-sm text-white/60 leading-[1.7] pb-5" data-i18n="faq.a1">Да, диагностика платная, но при заказе ремонта у нас её стоимость вычитается из итоговой цены работ.</p></div>
+      </div>
+      <div class="faq-item bg-navy-900 border border-white/5 rounded-2xl overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left">
+          <span class="font-display font-bold text-[14px] sm:text-[15px] text-white" data-i18n="faq.q2">Работаете ночью и в праздники?</span>
+          <svg class="faq-chevron w-5 h-5 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-panel px-5 sm:px-6"><p class="text-[13px] sm:text-sm text-white/60 leading-[1.7] pb-5" data-i18n="faq.a2">Да, мы работаем круглосуточно, без выходных и праздничных дней.</p></div>
+      </div>
+      <div class="faq-item bg-navy-900 border border-white/5 rounded-2xl overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left">
+          <span class="font-display font-bold text-[14px] sm:text-[15px] text-white" data-i18n="faq.q3">С какими марками автомобилей вы работаете?</span>
+          <svg class="faq-chevron w-5 h-5 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-panel px-5 sm:px-6"><p class="text-[13px] sm:text-sm text-white/60 leading-[1.7] pb-5" data-i18n="faq.a3">Со всеми марками: японские, корейские, европейские и отечественные автомобили.</p></div>
+      </div>
+      <div class="faq-item bg-navy-900 border border-white/5 rounded-2xl overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left">
+          <span class="font-display font-bold text-[14px] sm:text-[15px] text-white" data-i18n="faq.q4">Какая гарантия предоставляется?</span>
+          <svg class="faq-chevron w-5 h-5 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-panel px-5 sm:px-6"><p class="text-[13px] sm:text-sm text-white/60 leading-[1.7] pb-5" data-i18n="faq.a4">До 6 месяцев на выполненные работы, гарантия на запчасти — по условиям производителя.</p></div>
+      </div>
+      <div class="faq-item bg-navy-900 border border-white/5 rounded-2xl overflow-hidden">
+        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-5 sm:px-6 py-4 sm:py-5 text-left">
+          <span class="font-display font-bold text-[14px] sm:text-[15px] text-white" data-i18n="faq.q5">Как происходит оплата?</span>
+          <svg class="faq-chevron w-5 h-5 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="faq-panel px-5 sm:px-6"><p class="text-[13px] sm:text-sm text-white/60 leading-[1.7] pb-5" data-i18n="faq.a5">Наличными, переводом на Kaspi или картой — как вам удобно.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG TEASER ============ -->
+<section id="blog" class="bg-[#F7F8FB] text-navy-900 py-16 sm:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14 reveal">
+      <span class="text-gold-600 font-display font-bold text-xs sm:text-sm tracking-widest uppercase" data-i18n="blog.kicker">Полезное</span>
+      <h2 class="font-display font-extrabold text-[28px] sm:text-4xl text-navy-900 mt-2 tracking-tight" data-i18n="blog.title">Из блога</h2>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-5">
+      <div class="reveal relative bg-white border border-navy-900/5 rounded-2xl p-6 shadow-card">
+        <span class="absolute top-4 right-4 bg-navy-900/8 text-navy-500 text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" data-i18n="blog.soon">Скоро</span>
+        <svg class="w-8 h-8 text-gold-500 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16M4 12h16M4 18h10" stroke-linecap="round"/></svg>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-2 leading-snug" data-i18n="blog.p1.title">Что делать, если машина не заводится: 6 быстрых проверок</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="blog.p1.desc">Пошаговый чек-лист перед вызовом мастера</p>
+      </div>
+      <div class="reveal relative bg-white border border-navy-900/5 rounded-2xl p-6 shadow-card">
+        <span class="absolute top-4 right-4 bg-navy-900/8 text-navy-500 text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" data-i18n="blog.soon">Скоро</span>
+        <svg class="w-8 h-8 text-gold-500 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="6" width="10" height="15" rx="1.5"/><path d="M10 6V4h4v2" stroke-linecap="round"/></svg>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-2 leading-snug" data-i18n="blog.p2.title">Почему аккумулятор быстро садится: 7 причин</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="blog.p2.desc">Три из них можно проверить самостоятельно</p>
+      </div>
+      <div class="reveal relative bg-white border border-navy-900/5 rounded-2xl p-6 shadow-card">
+        <span class="absolute top-4 right-4 bg-navy-900/8 text-navy-500 text-[10px] font-bold uppercase tracking-wide px-2.5 py-1 rounded-full" data-i18n="blog.soon">Скоро</span>
+        <svg class="w-8 h-8 text-gold-500 mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-2 leading-snug" data-i18n="blog.p3.title">Горит Check Engine: когда опасно, а когда можно ехать</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6]" data-i18n="blog.p3.desc">Разбираем частые коды ошибок</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="relative py-16 sm:py-20 overflow-hidden grain">
+  <div class="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-950 to-navy-900"></div>
+  <div class="absolute inset-0" style="background: radial-gradient(50% 60% at 85% 20%, rgba(242,179,61,0.16), transparent);"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center reveal">
+    <h2 class="font-display font-extrabold text-[26px] sm:text-4xl text-white tracking-tight leading-[1.15]" data-i18n="finalcta.title">Звоните прямо сейчас — мастер будет у вас через 40 минут</h2>
+    <p class="text-white/60 mt-4 text-sm sm:text-base" data-i18n="finalcta.sub">Круглосуточно, без выходных, по всей Алматы</p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+      <a href="tel:+77071099998" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/15 text-white font-display font-bold text-sm rounded-full px-6 py-3.5 transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        +7 707 109 9998
+      </a>
+      <a href="#" data-wa-btn data-wa-msg="hero.wamsg" class="inline-flex items-center gap-2 bg-gradient-to-br from-gold-400 to-gold-600 text-navy-950 font-display font-extrabold text-sm rounded-full px-6 py-3.5 shadow-gold-lg hover:brightness-110 active:scale-[0.97] transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.2 0 .1 7.1.1 15.9c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.2c2.3 1.3 4.9 1.9 7.6 1.9 8.8 0 15.9-7.1 15.9-15.9C31.9 7.1 24.8 0 16 0zm9.3 22.6c-.4 1.1-2.1 2-3.3 2.3-.9.2-2 .3-5.7-1.2-4.8-2-7.9-6.9-8.1-7.2-.2-.3-1.9-2.6-1.9-4.9s1.2-3.5 1.6-4c.4-.4.9-.6 1.2-.6h.9c.3 0 .6 0 .9.7.3.8 1.1 2.7 1.2 2.9.1.2.2.4 0 .7-.1.3-.2.4-.4.7-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.7 2.1 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.3-.4.5-.3.9-.2.4.2 2.5 1.2 2.9 1.4.4.2.7.3.8.5.1.2.1 1.1-.3 2.2z"/></svg>
+        <span data-i18n="header.write_wa">Написать в WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact" class="bg-navy-950 border-t border-white/5 pt-16 sm:pt-20 pb-8 scroll-mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-[1.1fr_1fr_1.2fr] gap-10 lg:gap-14 pb-12 sm:pb-16 border-b border-white/5">
+      <div>
+        <a href="#top" class="flex items-center gap-2.5 mb-4">
+          <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-gold-400 to-gold-600 shadow-gold shrink-0">
+            <svg class="w-5.5 h-5.5 text-navy-950" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+          </span>
+          <span class="font-display font-extrabold text-base text-white">АвтоЭлектрик Алматы</span>
+        </a>
+        <p class="text-white/50 text-[13px] leading-[1.7] max-w-sm mb-5" data-i18n="footer.about">Выездной автоэлектрик в Алматы. Диагностика, ремонт проводки, аккумуляторы, сигнализации и мультимедиа — быстро и с гарантией.</p>
+        <div class="flex items-center gap-3">
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/5 hover:bg-gold-500 hover:text-navy-950 flex items-center justify-center transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+          <a href="#" data-wa-btn data-wa-msg="header.wamsg" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-white/5 hover:bg-wa hover:text-white flex items-center justify-center transition-colors"><svg class="w-4 h-4" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.2 0 .1 7.1.1 15.9c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.2c2.3 1.3 4.9 1.9 7.6 1.9 8.8 0 15.9-7.1 15.9-15.9C31.9 7.1 24.8 0 16 0zm9.3 22.6c-.4 1.1-2.1 2-3.3 2.3-.9.2-2 .3-5.7-1.2-4.8-2-7.9-6.9-8.1-7.2-.2-.3-1.9-2.6-1.9-4.9s1.2-3.5 1.6-4c.4-.4.9-.6 1.2-.6h.9c.3 0 .6 0 .9.7.3.8 1.1 2.7 1.2 2.9.1.2.2.4 0 .7-.1.3-.2.4-.4.7-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.7 2.1 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.3-.4.5-.3.9-.2.4.2 2.5 1.2 2.9 1.4.4.2.7.3.8.5.1.2.1 1.1-.3 2.2z"/></svg></a>
+          <a href="tel:+77071099998" aria-label="Телефон" class="w-9 h-9 rounded-full bg-white/5 hover:bg-gold-500 hover:text-navy-950 flex items-center justify-center transition-colors"><svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white text-sm mb-4" data-i18n="footer.nav">Навигация</h4>
+        <ul class="space-y-2.5 text-[13px] text-white/55">
+          <li><a href="#services" class="hover:text-gold-500 transition-colors" data-i18n="nav.services">Услуги</a></li>
+          <li><a href="#prices" class="hover:text-gold-500 transition-colors" data-i18n="nav.prices">Цены</a></li>
+          <li><a href="#reviews" class="hover:text-gold-500 transition-colors" data-i18n="nav.reviews">Отзывы</a></li>
+          <li><a href="#gallery" class="hover:text-gold-500 transition-colors" data-i18n="nav.gallery">Галерея</a></li>
+          <li><a href="#faq" class="hover:text-gold-500 transition-colors" data-i18n="footer.faq">Вопросы</a></li>
+        </ul>
+        <h4 class="font-display font-bold text-white text-sm mt-6 mb-3" data-i18n="footer.hours">Режим работы</h4>
+        <p class="text-[13px] text-white/55" data-i18n="footer.hoursval">Круглосуточно, без выходных</p>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-white text-sm mb-4" data-i18n="footer.contacts">Контакты</h4>
+        <div class="space-y-3">
+          <a href="tel:+77071099998" class="flex items-center gap-3 text-white/80 hover:text-gold-500 transition-colors text-[14px] font-semibold">
+            <svg class="w-4 h-4 text-gold-500 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            +7 707 109 9998
+          </a>
+          <div class="flex items-start gap-3 text-white/55 text-[13px]">
+            <svg class="w-4 h-4 text-gold-500 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span data-i18n="footer.address">г. Алматы, выезд по всему городу</span>
+          </div>
+        </div>
+        <form id="footerForm" class="mt-5 space-y-2.5">
+          <input required type="text" name="name" data-i18n-placeholder="hero.formName" placeholder="Ваше имя" class="w-full bg-white/5 border border-white/10 focus:border-gold-500/60 rounded-xl px-4 py-2.5 text-[13px] text-white placeholder:text-white/35 outline-none transition-colors">
+          <input required type="tel" name="phone" data-i18n-placeholder="hero.formPhone" placeholder="+7 (___) ___-__-__" class="w-full bg-white/5 border border-white/10 focus:border-gold-500/60 rounded-xl px-4 py-2.5 text-[13px] text-white placeholder:text-white/35 outline-none transition-colors">
+          <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-navy-950 font-display font-extrabold text-[13px] rounded-xl py-3 transition-all active:scale-[0.98]">
+            <span data-i18n="hero.formSubmit">Отправить заявку</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[12px] text-white/35">
+      <p data-i18n="footer.copy">© 2026 АвтоЭлектрик Алматы. Индивидуальный предприниматель.</p>
+      <p data-i18n="footer.made">Все фото — временные, будут заменены на реальные</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOATING BUTTON ============ -->
+<a href="#" data-wa-btn data-wa-msg="header.wamsg" aria-label="Написать в WhatsApp" title="Написать в WhatsApp"
+   class="fixed z-[80] flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-wa to-wa-dark shadow-[0_10px_30px_-6px_rgba(37,211,102,0.65)] hover:scale-105 active:scale-95 transition-transform"
+   style="right: max(1.25rem, env(safe-area-inset-right)); bottom: max(1.25rem, env(safe-area-inset-bottom));">
+  <span class="wa-ring bg-gold-500/50"></span>
+  <span class="wa-ring ring-2 bg-wa/50"></span>
+  <svg class="relative w-7 h-7 sm:w-8 sm:h-8 text-white" viewBox="0 0 32 32" fill="currentColor"><path d="M16 0C7.2 0 .1 7.1.1 15.9c0 2.8.7 5.5 2.1 7.9L0 32l8.4-2.2c2.3 1.3 4.9 1.9 7.6 1.9 8.8 0 15.9-7.1 15.9-15.9C31.9 7.1 24.8 0 16 0zm9.3 22.6c-.4 1.1-2.1 2-3.3 2.3-.9.2-2 .3-5.7-1.2-4.8-2-7.9-6.9-8.1-7.2-.2-.3-1.9-2.6-1.9-4.9s1.2-3.5 1.6-4c.4-.4.9-.6 1.2-.6h.9c.3 0 .6 0 .9.7.3.8 1.1 2.7 1.2 2.9.1.2.2.4 0 .7-.1.3-.2.4-.4.7-.2.2-.4.5-.6.6-.2.2-.4.4-.2.8.2.4 1 1.7 2.1 2.7 1.5 1.3 2.7 1.7 3.1 1.9.4.2.6.2.8-.1.2-.3.9-1.1 1.2-1.4.3-.4.5-.3.9-.2.4.2 2.5 1.2 2.9 1.4.4.2.7.3.8.5.1.2.1 1.1-.3 2.2z"/></svg>
+</a>
+
+<!-- toast -->
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 z-[90] bg-navy-900 border border-gold-500/40 text-white text-sm font-semibold px-5 py-3 rounded-full shadow-card-dark opacity-0 pointer-events-none transition-all duration-300 translate-y-4"></div>
+
+<!-- video lightbox -->
+<div id="videoLightbox" class="fixed inset-0 z-[95] hidden items-center justify-center p-4 sm:p-8">
+  <button id="lightboxClose" aria-label="Закрыть" class="absolute top-5 right-5 sm:top-8 sm:right-8 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+    <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"/></svg>
+  </button>
+  <div class="w-full max-w-xl">
+    <div class="rounded-2xl overflow-hidden bg-black shadow-2xl">
+      <video id="lightboxVideo" class="w-full h-auto max-h-[70vh]" controls playsinline></video>
+    </div>
+    <p class="text-white/50 text-[12px] text-center mt-3" data-i18n="lightbox.caption">Демонстрация процесса работы автоэлектрика</p>
+  </div>
+</div>
+
+<script>
+const TRANSLATIONS = {
+  "nav.services": {ru:"Услуги", kk:"Қызметтер"},
+  "nav.prices": {ru:"Цены", kk:"Бағалар"},
+  "nav.reviews": {ru:"Отзывы", kk:"Пікірлер"},
+  "nav.blog": {ru:"Блог", kk:"Блог"},
+  "nav.contact": {ru:"Контакты", kk:"Байланыс"},
+  "nav.gallery": {ru:"Галерея", kk:"Галерея"},
+  "util.open": {ru:"Работаем сейчас · 24/7", kk:"Қазір жұмыс істейміз · 24/7"},
+  "util.coverage": {ru:"Вся Алматы, выезд 40 минут", kk:"Алматы бойынша, 40 минутта жетеміз"},
+  "header.city": {ru:"Алматы · 24/7", kk:"Алматы · 24/7"},
+  "header.callus": {ru:"Звоните сейчас", kk:"Қазір қоңырау шалыңыз"},
+  "header.write_wa": {ru:"Написать в WhatsApp", kk:"WhatsApp-қа жазу"},
+  "header.wamsg": {ru:"Здравствуйте! Мне нужен автоэлектрик.", kk:"Сәлеметсіз бе! Маған автоэлектрик қажет."},
+  "mobile.menu": {ru:"Меню", kk:"Мәзір"},
+  "hero.badge": {ru:"500+ восстановленных авто по Алматы", kk:"Алматы бойынша 500+ көлік жөнделді"},
+  "hero.h1a": {ru:"Автоэлектрик в Алматы:", kk:"Алматыдағы автоэлектрик:"},
+  "hero.h1b": {ru:"приедем за 40 минут и устраним неисправность на месте", kk:"40 минутта жетіп, ақауды сол жерде түзетеміз"},
+  "hero.sub": {ru:"Диагностика · аккумулятор · генератор · сигнализация · проводка · мультимедиа. Выезжаем в любой район города круглосуточно.", kk:"Диагностика · аккумулятор · генератор · сигнализация · өткізгіш желі · мультимедиа. Қала бойынша кез келген ауданға тәулік бойы шығамыз."},
+  "hero.cta1": {ru:"Вызвать мастера", kk:"Шеберді шақыру"},
+  "hero.cta2": {ru:"Смотреть цены", kk:"Бағаларды көру"},
+  "hero.min": {ru:"мин", kk:"мин"},
+  "hero.stat1": {ru:"среднее время выезда", kk:"орташа жету уақыты"},
+  "hero.years": {ru:"лет", kk:"жыл"},
+  "hero.stat2": {ru:"опыта на дорогах Алматы", kk:"Алматы жолдарындағы тәжірибе"},
+  "hero.stat3": {ru:"без выходных и праздников", kk:"демалыссыз және мереке күндерсіз"},
+  "hero.formTitle": {ru:"Оставьте заявку", kk:"Өтінім қалдырыңыз"},
+  "hero.formSub": {ru:"Перезвоним в течение 5 минут", kk:"5 минут ішінде хабарласамыз"},
+  "hero.formName": {ru:"Ваше имя", kk:"Атыңыз"},
+  "hero.formPhone": {ru:"+7 (___) ___-__-__", kk:"+7 (___) ___-__-__"},
+  "hero.formSubmit": {ru:"Отправить заявку", kk:"Өтінімді жіберу"},
+  "hero.formNote": {ru:"Нажимая кнопку, вы соглашаетесь с политикой обработки данных", kk:"Батырманы басу арқылы деректерді өңдеу саясатына келісесіз"},
+  "hero.wamsg": {ru:"Здравствуйте! Мне нужен автоэлектрик, есть проблема с машиной.", kk:"Сәлеметсіз бе! Маған автоэлектрик қажет, көлігімде ақау бар."},
+  "trust.stat1": {ru:"лет опыта", kk:"жыл тәжірибе"},
+  "trust.stat2": {ru:"авто отремонтировано", kk:"көлік жөнделді"},
+  "trust.stat3": {ru:"среднее время выезда", kk:"орташа жету уақыты"},
+  "trust.stat4num": {ru:"до 6 мес.", kk:"6 айға дейін"},
+  "trust.stat4": {ru:"гарантии на работу", kk:"жұмысқа кепілдік"},
+  "pain.kicker": {ru:"Знакомо?", kk:"Таныс па?"},
+  "pain.title": {ru:"Знакомая ситуация?", kk:"Таныс жағдай ма?"},
+  "pain.item1": {ru:"Утром машина не заводится", kk:"Таңертең көлік қосылмайды"},
+  "pain.item2": {ru:"На панели горит Check Engine", kk:"Панельде Check Engine жанып тұр"},
+  "pain.item3": {ru:"Фары или поворотники не работают", kk:"Фаралар немесе сигнал жұмыс істемейді"},
+  "pain.item4": {ru:"Сигнализация включается сама", kk:"Сигнализация өз бетінше іске қосылады"},
+  "pain.item5": {ru:"Пропал звук в мультимедиа", kk:"Мультимедиа дыбысы жоғалды"},
+  "pain.cta": {ru:"Узнать решение →", kk:"Шешімін білу →"},
+  "services.kicker": {ru:"Что мы делаем", kk:"Не істейміз"},
+  "services.title": {ru:"Наши услуги", kk:"Біздің қызметтер"},
+  "services.subtitle": {ru:"От экспресс-диагностики до сложного ремонта проводки — работаем с любой маркой авто", kk:"Экспресс-диагностикадан күрделі өткізгіш желіні жөндеуге дейін — кез келген маркамен жұмыс істейміз"},
+  "svc.diag.title": {ru:"Компьютерная диагностика", kk:"Компьютерлік диагностика"},
+  "svc.diag.desc": {ru:"Проверка всех блоков ECU, считывание кодов ошибок дилерским сканером Autel/Launch", kk:"Барлық ECU блоктарын тексеру, Autel/Launch дилерлік сканерімен қате кодтарын оқу"},
+  "svc.diag.price": {ru:"от 5 000 ₸", kk:"5 000 ₸-дан"},
+  "svc.wiring.title": {ru:"Электропроводка", kk:"Электр өткізгіш желі"},
+  "svc.wiring.desc": {ru:"Поиск и устранение короткого замыкания, окисления и повреждённых проводов", kk:"Қысқа тұйықталуды, тотығуды және зақымдалған сымдарды тауып, жою"},
+  "svc.wiring.price": {ru:"от 8 000 ₸", kk:"8 000 ₸-дан"},
+  "svc.battery.title": {ru:"Аккумулятор", kk:"Аккумулятор"},
+  "svc.battery.desc": {ru:"Проверка, зарядка, замена, прикуривание на месте в любое время суток", kk:"Тексеру, зарядтау, ауыстыру, кез келген уақытта жол үстінде іске қосу"},
+  "svc.battery.price": {ru:"от 3 000 ₸", kk:"3 000 ₸-дан"},
+  "svc.gen.title": {ru:"Генератор и стартер", kk:"Генератор мен стартер"},
+  "svc.gen.desc": {ru:"Ремонт, восстановление и замена генератора и стартера любой сложности", kk:"Кез келген күрделіліктегі генератор мен стартерді жөндеу, қалпына келтіру, ауыстыру"},
+  "svc.gen.price": {ru:"Цена после диагностики", kk:"Диагностикадан кейін баға"},
+  "svc.alarm.title": {ru:"Сигнализация и иммобилайзер", kk:"Сигнализация мен иммобилайзер"},
+  "svc.alarm.desc": {ru:"Установка, настройка, программирование ключ-карт для любых марок", kk:"Кез келген маркаға орнату, баптау, кілт-карта бағдарламалау"},
+  "svc.alarm.price": {ru:"от 25 000 ₸", kk:"25 000 ₸-дан"},
+  "svc.light.title": {ru:"Световая система", kk:"Жарық жүйесі"},
+  "svc.light.desc": {ru:"Фары, ксенон/LED, регулировка света и установка дополнительной оптики", kk:"Фаралар, ксенон/LED, жарықты реттеу және қосымша оптика орнату"},
+  "svc.light.price": {ru:"Цена после диагностики", kk:"Диагностикадан кейін баға"},
+  "svc.media.title": {ru:"Мультимедиа и аудио", kk:"Мультимедиа және аудио"},
+  "svc.media.desc": {ru:"Магнитола, камера заднего вида, парктроник — подбор и установка", kk:"Магнитола, артқы көрініс камерасы, парктроник — таңдау және орнату"},
+  "svc.media.price": {ru:"Цена после диагностики", kk:"Диагностикадан кейін баға"},
+  "svc.sos.title": {ru:"Срочный выезд 24/7", kk:"Шұғыл шығу 24/7"},
+  "svc.sos.desc": {ru:"Выезжаем в любой район Алматы круглосуточно, без выходных", kk:"Алматының кез келген ауданына тәулік бойы, демалыссыз шығамыз"},
+  "svc.sos.price": {ru:"от 40 минут", kk:"40 минуттан"},
+  "process.kicker": {ru:"Просто и быстро", kk:"Оңай және жылдам"},
+  "process.title": {ru:"Как мы работаем", kk:"Қалай жұмыс істейміз"},
+  "process.s1.title": {ru:"Звоните или пишете", kk:"Қоңырау шаласыз немесе жазасыз"},
+  "process.s1.desc": {ru:"Описываете проблему по телефону или в WhatsApp", kk:"Мәселені телефон немесе WhatsApp арқылы сипаттайсыз"},
+  "process.s2.title": {ru:"Мастер выезжает", kk:"Шебер шығады"},
+  "process.s2.desc": {ru:"Приезжаем за 40–60 минут или принимаем у себя", kk:"40–60 минутта жетеміз немесе өз орнымызда қабылдаймыз"},
+  "process.s3.title": {ru:"Диагностика и цена", kk:"Диагностика және баға"},
+  "process.s3.desc": {ru:"Называем точную стоимость, вы принимаете решение", kk:"Нақты бағаны айтамыз, сіз шешім қабылдайсыз"},
+  "process.s4.title": {ru:"Ремонт и гарантия", kk:"Жөндеу және кепілдік"},
+  "process.s4.desc": {ru:"Устраняем неисправность и выдаём гарантийный талон", kk:"Ақауды жоямыз және кепілдік талонын береміз"},
+  "prices.kicker": {ru:"Прозрачно", kk:"Ашық баға"},
+  "prices.title": {ru:"Цены на услуги", kk:"Қызмет бағалары"},
+  "prices.subtitle": {ru:"Ориентировочные цены «от». Точная стоимость называется на месте после бесплатной диагностики", kk:"Бағыттаушы «...-дан» бағалар. Нақты құны тегін диагностикадан кейін сол жерде айтылады"},
+  "prices.row2": {ru:"Проверка / зарядка аккумулятора", kk:"Аккумуляторды тексеру / зарядтау"},
+  "prices.row3": {ru:"Устранение неисправности проводки", kk:"Өткізгіш желі ақауын жою"},
+  "prices.row5": {ru:"Генератор, стартер, свет, мультимедиа", kk:"Генератор, стартер, жарық, мультимедиа"},
+  "prices.onrequest": {ru:"по диагностике", kk:"диагностика бойынша"},
+  "prices.note": {ru:"*Точная цена зависит от марки и модели авто, уточняется мастером на месте", kk:"*Нақты баға көліктің марка/моделіне байланысты, шебер жерінде нақтылайды"},
+  "prices.cta": {ru:"Узнать точную цену", kk:"Нақты бағаны білу"},
+  "prices.wamsg": {ru:"Здравствуйте! Хочу узнать точную цену на услугу.", kk:"Сәлеметсіз бе! Қызметтің нақты бағасын білгім келеді."},
+  "cases.kicker": {ru:"Реальные примеры", kk:"Нақты мысалдар"},
+  "cases.title": {ru:"Кейсы: до и после", kk:"Кейстер: дейін және кейін"},
+  "cases.c1": {ru:"Клиента 2 недели «диагностировали» в трёх сервисах — мы нашли неисправность проводки за 40 минут выездной диагностики.", kk:"Клиентті 3 шеберханада 2 апта «тексерген» — біз өткізгіш желі ақауын 40 минуттық шығу диагностикасында таптық."},
+  "cases.c2": {ru:"Периодически пропадала мультимедиа и подсветка панели — оказалось окисление массы. Устранили за один выезд.", kk:"Мультимедиа мен панель жарығы мезгіл-мезгіл өшіп қалатын — себебі массаның тотығуы екен. Бір шығуда жойдық."},
+  "cases.c3": {ru:"Сигнализация срабатывала произвольно по ночам. Перепрограммировали блок и настроили чувствительность датчиков.", kk:"Сигнализация түнде өз бетінше іске қосылатын. Блокты қайта бағдарламалап, сенсорлар сезімталдығын баптадық."},
+  "guar.kicker": {ru:"Надёжность", kk:"Сенімділік"},
+  "guar.title": {ru:"Гарантии и сертификаты", kk:"Кепілдіктер мен сертификаттар"},
+  "guar.i1.title": {ru:"Гарантия до 6 месяцев", kk:"6 айға дейін кепілдік"},
+  "guar.i1.desc": {ru:"Отдельно на работу и на установленные запчасти", kk:"Жұмысқа және орнатылған қосалқы бөлшектерге бөлек беріледі"},
+  "guar.i2.title": {ru:"Дилерский уровень диагностики", kk:"Дилерлік деңгейдегі диагностика"},
+  "guar.i2.desc": {ru:"Сканеры Autel и Launch — точное определение неисправности", kk:"Autel және Launch сканерлері — ақауды дәл анықтау"},
+  "guar.i3.title": {ru:"Наряд-заказ на каждую работу", kk:"Әр жұмысқа наряд-заказ"},
+  "guar.i3.desc": {ru:"Письменное подтверждение цены и перечня работ", kk:"Баға мен жұмыс тізімінің жазбаша растамасы"},
+  "team.name": {ru:"Ерлан Т.", kk:"Ерлан Т."},
+  "team.role": {ru:"Ведущий автоэлектрик · 8 лет опыта", kk:"Жетекші автоэлектрик · 8 жыл тәжірибе"},
+  "team.bio": {ru:"Специализация — японские и корейские автомобили. Работал в дилерских центрах, сейчас выезжаю к клиентам напрямую — без наценки за автосервис.", kk:"Мамандануы — жапон және кореялық көліктер. Дилерлік орталықтарда жұмыс істеген, қазір клиенттерге тікелей барамын — автосервис үстемесіз."},
+  "team.cta": {ru:"Написать мастеру", kk:"Шеберге жазу"},
+  "team.wamsg": {ru:"Здравствуйте! Хочу задать вопрос мастеру.", kk:"Сәлеметсіз бе! Шеберге сұрақ қойғым келеді."},
+  "reviews.kicker": {ru:"Нам доверяют", kk:"Бізге сенеді"},
+  "reviews.title": {ru:"Отзывы наших клиентов", kk:"Клиенттеріміздің пікірлері"},
+  "reviews.tabvideo": {ru:"Видео", kk:"Бейне"},
+  "reviews.tabtext": {ru:"Текст", kk:"Жазбаша"},
+  "reviews.tabaudio": {ru:"Аудио", kk:"Аудио"},
+  "gallery.kicker": {ru:"С выездов", kk:"Шығулардан"},
+  "gallery.title": {ru:"Фотогалерея работ", kk:"Жұмыстар фотогалереясы"},
+  "coverage.kicker": {ru:"Зона выезда", kk:"Шығу аймағы"},
+  "coverage.title": {ru:"Выезжаем по всей Алматы", kk:"Алматы бойынша шығамыз"},
+  "coverage.desc": {ru:"Работаем во всех районах города. Среднее время прибытия мастера — 40–60 минут после звонка.", kk:"Қаланың барлық ауданында жұмыс істейміз. Шебердің орташа жету уақыты — қоңыраудан кейін 40–60 минут."},
+  "coverage.d1": {ru:"Алмалинский", kk:"Алмалы"},
+  "coverage.d2": {ru:"Бостандыкский", kk:"Бостандық"},
+  "coverage.d3": {ru:"Медеуский", kk:"Медеу"},
+  "coverage.d4": {ru:"Ауэзовский", kk:"Әуезов"},
+  "coverage.d5": {ru:"Турксибский", kk:"Түрксіб"},
+  "coverage.d6": {ru:"Жетысуский", kk:"Жетісу"},
+  "coverage.d7": {ru:"Наурызбайский", kk:"Наурызбай"},
+  "coverage.d8": {ru:"Алатауский", kk:"Алатау"},
+  "coverage.maplabel": {ru:"г. Алматы — вся зона обслуживания", kk:"Алматы қаласы — барлық қызмет көрсету аймағы"},
+  "faq.kicker": {ru:"Вопросы", kk:"Сұрақтар"},
+  "faq.title": {ru:"Частые вопросы", kk:"Жиі қойылатын сұрақтар"},
+  "faq.q1": {ru:"Диагностика платная? Она входит в стоимость ремонта?", kk:"Диагностика ақылы ма? Ол жөндеу бағасына кіре ме?"},
+  "faq.a1": {ru:"Да, диагностика платная, но при заказе ремонта у нас её стоимость вычитается из итоговой цены работ.", kk:"Иә, диагностика ақылы, бірақ жөндеуге тапсырыс берсеңіз, оның құны жұмыстың соңғы бағасынан шегеріледі."},
+  "faq.q2": {ru:"Работаете ночью и в праздники?", kk:"Түнде және мереке күндері жұмыс істейсіздер ме?"},
+  "faq.a2": {ru:"Да, мы работаем круглосуточно, без выходных и праздничных дней.", kk:"Иә, біз тәулік бойы, демалыссыз және мереке күндерсіз жұмыс істейміз."},
+  "faq.q3": {ru:"С какими марками автомобилей вы работаете?", kk:"Қандай көлік маркаларымен жұмыс істейсіздер?"},
+  "faq.a3": {ru:"Со всеми марками: японские, корейские, европейские и отечественные автомобили.", kk:"Барлық маркамен: жапон, кореялық, еуропалық және отандық көліктер."},
+  "faq.q4": {ru:"Какая гарантия предоставляется?", kk:"Қандай кепілдік беріледі?"},
+  "faq.a4": {ru:"До 6 месяцев на выполненные работы, гарантия на запчасти — по условиям производителя.", kk:"Орындалған жұмысқа 6 айға дейін, қосалқы бөлшекке — өндіруші шарттары бойынша кепілдік."},
+  "faq.q5": {ru:"Как происходит оплата?", kk:"Төлем қалай жүзеге асады?"},
+  "faq.a5": {ru:"Наличными, переводом на Kaspi или картой — как вам удобно.", kk:"Қолма-қол, Kaspi аударымымен немесе картамен — сізге қалай ыңғайлы болса."},
+  "blog.kicker": {ru:"Полезное", kk:"Пайдалы"},
+  "blog.title": {ru:"Из блога", kk:"Блогтан"},
+  "blog.soon": {ru:"Скоро", kk:"Жақында"},
+  "blog.p1.title": {ru:"Что делать, если машина не заводится: 6 быстрых проверок", kk:"Көлік қосылмаса не істеу керек: 6 жылдам тексеру"},
+  "blog.p1.desc": {ru:"Пошаговый чек-лист перед вызовом мастера", kk:"Шеберді шақырмас бұрын қадамдық чеклист"},
+  "blog.p2.title": {ru:"Почему аккумулятор быстро садится: 7 причин", kk:"Аккумулятор неге тез отырады: 7 себеп"},
+  "blog.p2.desc": {ru:"Три из них можно проверить самостоятельно", kk:"Үшеуін өз бетіңізше тексере аласыз"},
+  "blog.p3.title": {ru:"Горит Check Engine: когда опасно, а когда можно ехать", kk:"Check Engine жанып тұр: қашан қауіпті, қашан жүруге болады"},
+  "blog.p3.desc": {ru:"Разбираем частые коды ошибок", kk:"Жиі кездесетін қате кодтарын түсіндіреміз"},
+  "finalcta.title": {ru:"Звоните прямо сейчас — мастер будет у вас через 40 минут", kk:"Дәл қазір хабарласыңыз — шебер 40 минутта жетеді"},
+  "finalcta.sub": {ru:"Круглосуточно, без выходных, по всей Алматы", kk:"Тәулік бойы, демалыссыз, Алматы бойынша"},
+  "footer.about": {ru:"Выездной автоэлектрик в Алматы. Диагностика, ремонт проводки, аккумуляторы, сигнализации и мультимедиа — быстро и с гарантией.", kk:"Алматыдағы шығу қызметі бар автоэлектрик. Диагностика, өткізгіш желіні жөндеу, аккумулятор, сигнализация және мультимедиа — жылдам әрі кепілдікпен."},
+  "footer.nav": {ru:"Навигация", kk:"Навигация"},
+  "footer.faq": {ru:"Вопросы", kk:"Сұрақтар"},
+  "footer.hours": {ru:"Режим работы", kk:"Жұмыс уақыты"},
+  "footer.hoursval": {ru:"Круглосуточно, без выходных", kk:"Тәулік бойы, демалыссыз"},
+  "footer.contacts": {ru:"Контакты", kk:"Байланыс"},
+  "footer.address": {ru:"г. Алматы, выезд по всему городу", kk:"Алматы қаласы, қала бойынша шығу қызметі"},
+  "footer.copy": {ru:"© 2026 АвтоЭлектрик Алматы. Индивидуальный предприниматель.", kk:"© 2026 АвтоЭлектрик Алматы. Жеке кәсіпкер."},
+  "footer.made": {ru:"Все фото — временные, будут заменены на реальные", kk:"Барлық фото — уақытша, нақтыға ауыстырылады"},
+  "lightbox.caption": {ru:"Демонстрация процесса работы автоэлектрика", kk:"Автоэлектрик жұмыс процесінің демонстрациясы"}
+};
+</script>
+<script>
+(function () {
+  "use strict";
+
+  var WA_NUMBER = "77071099998";
+  var currentLang = localStorage.getItem("site_lang") || "ru";
+
+  function tr(key) {
+    var e = TRANSLATIONS[key];
+    if (!e) return "";
+    return e[currentLang] || e.ru;
+  }
+
+  function waLink(msgKey) {
+    return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(tr(msgKey));
+  }
+
+  function updateWaLinks() {
+    document.querySelectorAll("[data-wa-btn]").forEach(function (a) {
+      a.setAttribute("href", waLink(a.getAttribute("data-wa-msg")));
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+    });
+  }
+
+  var carousels = [];
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem("site_lang", lang);
+    document.documentElement.lang = lang === "kk" ? "kk" : "ru";
+
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n");
+      if (TRANSLATIONS[key]) el.textContent = TRANSLATIONS[key][lang] || TRANSLATIONS[key].ru;
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-placeholder");
+      if (TRANSLATIONS[key]) el.setAttribute("placeholder", TRANSLATIONS[key][lang] || TRANSLATIONS[key].ru);
+    });
+
+    document.querySelectorAll("[data-lang-btn]").forEach(function (btn) {
+      var active = btn.getAttribute("data-lang-btn") === lang;
+      btn.classList.remove("bg-gold-500", "text-navy-950", "font-extrabold", "text-white/50");
+      if (active) {
+        btn.classList.add("bg-gold-500", "text-navy-950", "font-extrabold");
+      } else {
+        btn.classList.add("text-white/50");
+      }
+    });
+
+    updateWaLinks();
+    carousels.forEach(function (c) { c.build(); });
+  }
+
+  function showToast(msg) {
+    var toast = document.getElementById("toast");
+    toast.textContent = msg;
+    toast.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
+    toast.classList.add("opacity-100", "translate-y-0");
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(function () {
+      toast.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
+      toast.classList.remove("opacity-100", "translate-y-0");
+    }, 3200);
+  }
+
+  document.addEventListener("click", function (e) {
+    var langBtn = e.target.closest("[data-lang-btn]");
+    if (langBtn) applyLanguage(langBtn.getAttribute("data-lang-btn"));
+  });
+
+  /* ---------------- Mobile menu ---------------- */
+  var hamburgerBtn = document.getElementById("hamburgerBtn");
+  var mobileMenu = document.getElementById("mobileMenu");
+  var mobileBackdrop = document.getElementById("mobileBackdrop");
+  var mobileCloseBtn = document.getElementById("mobileCloseBtn");
+
+  function openMenu() {
+    mobileMenu.classList.add("open");
+    mobileBackdrop.classList.remove("opacity-0", "pointer-events-none");
+    hamburgerBtn.classList.add("open");
+    hamburgerBtn.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove("open");
+    mobileBackdrop.classList.add("opacity-0", "pointer-events-none");
+    hamburgerBtn.classList.remove("open");
+    hamburgerBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+  hamburgerBtn.addEventListener("click", function () {
+    mobileMenu.classList.contains("open") ? closeMenu() : openMenu();
+  });
+  mobileCloseBtn.addEventListener("click", closeMenu);
+  mobileBackdrop.addEventListener("click", closeMenu);
+  document.querySelectorAll(".mobile-link").forEach(function (a) {
+    a.addEventListener("click", closeMenu);
+  });
+  window.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { closeMenu(); closeLightbox(); }
+  });
+
+  /* ---------------- FAQ accordion ---------------- */
+  document.querySelectorAll(".faq-toggle").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var item = btn.closest(".faq-item");
+      var wasOpen = item.classList.contains("open");
+      document.querySelectorAll(".faq-item.open").forEach(function (i) { i.classList.remove("open"); });
+      if (!wasOpen) item.classList.add("open");
+    });
+  });
+
+  /* ---------------- Reveal on scroll ---------------- */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+  // Safety net: never leave content permanently invisible if the observer misbehaves
+  setTimeout(function () {
+    document.querySelectorAll(".reveal:not(.in)").forEach(function (el) { el.classList.add("in"); });
+  }, 2500);
+
+  /* ---------------- Review tabs ---------------- */
+  document.querySelectorAll(".review-tab").forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      document.querySelectorAll(".review-tab").forEach(function (t) {
+        t.classList.remove("active-tab", "bg-gradient-to-br", "from-gold-400", "to-gold-600", "text-navy-950", "shadow-gold");
+        t.classList.add("bg-white/5", "text-white/60");
+      });
+      tab.classList.add("active-tab", "bg-gradient-to-br", "from-gold-400", "to-gold-600", "text-navy-950", "shadow-gold");
+      tab.classList.remove("bg-white/5", "text-white/60");
+      var which = tab.getAttribute("data-review-tab");
+      document.querySelectorAll(".review-panel").forEach(function (p) { p.classList.add("hidden"); });
+      document.getElementById("panel-" + which).classList.remove("hidden");
+    });
+  });
+  document.querySelector('.review-tab[data-review-tab="video"]').click();
+
+  /* ---------------- Forms -> WhatsApp ---------------- */
+  function wireForm(formEl) {
+    if (!formEl) return;
+    formEl.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = formEl.querySelector('[name="name"]').value.trim();
+      var phone = formEl.querySelector('[name="phone"]').value.trim();
+      if (!name || !phone) return;
+      var template = currentLang === "kk"
+        ? "Сәлеметсіз бе! Менің атым " + name + ", телефон: " + phone + ". Автоэлектрик қажет."
+        : "Здравствуйте! Меня зовут " + name + ", телефон: " + phone + ". Нужен автоэлектрик.";
+      window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(template), "_blank", "noopener");
+      showToast(currentLang === "kk" ? "Өтінім WhatsApp-қа жіберілді!" : "Заявка отправлена в WhatsApp!");
+      formEl.reset();
+    });
+  }
+  wireForm(document.getElementById("heroForm"));
+  wireForm(document.getElementById("footerForm"));
+
+  /* ---------------- Video lightbox ---------------- */
+  var lightbox = document.getElementById("videoLightbox");
+  var lightboxVideo = document.getElementById("lightboxVideo");
+  function openLightbox() {
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+    lightboxVideo.src = "ava9.mp4";
+    lightboxVideo.currentTime = 0;
+    lightboxVideo.play().catch(function () {});
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox() {
+    if (lightbox.classList.contains("hidden")) return;
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute("src");
+    lightboxVideo.load();
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+    document.body.style.overflow = mobileMenu.classList.contains("open") ? "hidden" : "";
+  }
+  document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
+
+  /* ---------------- Hero video autoplay fallback ---------------- */
+  var heroVideo = document.querySelector("section video[autoplay]");
+  if (heroVideo) {
+    var tryPlay = function () { heroVideo.play().catch(function () {}); };
+    heroVideo.addEventListener("loadeddata", tryPlay);
+    document.addEventListener("click", tryPlay, { once: true });
+  }
+
+  /* ================= CAROUSEL ================= */
+  function Carousel(opts) {
+    this.viewport = document.getElementById(opts.viewportId);
+    this.track = document.getElementById(opts.trackId);
+    this.items = opts.items;
+    this.renderCard = opts.renderCard;
+    this.gap = opts.gap || 20;
+    this.index = 1;
+    this._built = false;
+    this.autoplay = opts.autoplay !== false;
+    this.intervalMs = opts.intervalMs || 5500;
+    this.timer = null;
+
+    var self = this;
+    this.track.addEventListener("transitionend", function (e) {
+      if (e.propertyName !== "transform") return;
+      var n = self.items.length;
+      if (self.index === n + 1) { self.index = 1; self.setPosition(false); }
+      else if (self.index === 0) { self.index = n; self.setPosition(false); }
+    });
+
+    document.querySelectorAll('[data-car-prev="' + opts.name + '"]').forEach(function (b) {
+      b.addEventListener("click", function () { self.stopAutoplay(); self.prev(); self.restartAutoplay(); });
+    });
+    document.querySelectorAll('[data-car-next="' + opts.name + '"]').forEach(function (b) {
+      b.addEventListener("click", function () { self.stopAutoplay(); self.next(); self.restartAutoplay(); });
+    });
+
+    this.bindDrag();
+    window.addEventListener("resize", function () { self.setPosition(false); });
+    this.viewport.addEventListener("mouseenter", function () { self.stopAutoplay(); });
+    this.viewport.addEventListener("mouseleave", function () { self.restartAutoplay(); });
+    this.viewport.addEventListener("touchstart", function () { self.stopAutoplay(); }, { passive: true });
+
+    this.build();
+    this.restartAutoplay();
+    carousels.push(this);
+  }
+
+  Carousel.prototype.build = function () {
+    var self = this;
+    var n = this.items.length;
+    var all = [this.items[n - 1]].concat(this.items, [this.items[0]]);
+    this.track.innerHTML = "";
+    all.forEach(function (item, i) {
+      var card = self.renderCard(item, i);
+      card.classList.add("car-slide");
+      card.style.marginRight = self.gap + "px";
+      self.track.appendChild(card);
+    });
+    if (!this._built) { this.index = 1; this._built = true; }
+    requestAnimationFrame(function () { self.setPosition(false); });
+  };
+
+  Carousel.prototype.cardWidth = function () {
+    var first = this.track.children[0];
+    if (!first) return 0;
+    return first.getBoundingClientRect().width + this.gap;
+  };
+
+  Carousel.prototype.setPosition = function (animate) {
+    var w = this.cardWidth();
+    this.track.style.transition = animate ? "transform .55s cubic-bezier(0.22,0.61,0.36,1)" : "none";
+    this.track.style.transform = "translateX(" + (-this.index * w) + "px)";
+  };
+
+  Carousel.prototype.next = function () { this.index++; this.setPosition(true); };
+  Carousel.prototype.prev = function () { this.index--; this.setPosition(true); };
+
+  Carousel.prototype.startAutoplay = function () {
+    if (!this.autoplay) return;
+    var self = this;
+    this.stopAutoplay();
+    this.timer = setInterval(function () { self.next(); }, this.intervalMs);
+  };
+  Carousel.prototype.stopAutoplay = function () {
+    if (this.timer) clearInterval(this.timer);
+    this.timer = null;
+  };
+  Carousel.prototype.restartAutoplay = function () { this.startAutoplay(); };
+
+  Carousel.prototype.bindDrag = function () {
+    var self = this;
+    var startX = 0, startTranslate = 0, dragging = false;
+    this.viewport.addEventListener("pointerdown", function (e) {
+      if (e.target.closest("a,button")) return;
+      dragging = true;
+      self.stopAutoplay();
+      startX = e.clientX;
+      startTranslate = -self.index * self.cardWidth();
+      self.track.style.transition = "none";
+    });
+    window.addEventListener("pointermove", function (e) {
+      if (!dragging) return;
+      var dx = e.clientX - startX;
+      self.track.style.transform = "translateX(" + (startTranslate + dx) + "px)";
+    });
+    window.addEventListener("pointerup", function (e) {
+      if (!dragging) return;
+      dragging = false;
+      var dx = e.clientX - startX;
+      var w = self.cardWidth();
+      if (Math.abs(dx) > w * 0.18) { dx < 0 ? self.next() : self.prev(); }
+      else { self.setPosition(true); }
+      self.restartAutoplay();
+    });
+  };
+
+  /* ---------------- helpers ---------------- */
+  function el(tag, className, html) {
+    var e = document.createElement(tag);
+    if (className) e.className = className;
+    if (html !== undefined) e.innerHTML = html;
+    return e;
+  }
+  function initials(name) { return name.trim().charAt(0).toUpperCase(); }
+  function starsHtml(rating) {
+    var s = "";
+    for (var i = 0; i < 5; i++) {
+      s += '<svg class="w-3.5 h-3.5 ' + (i < rating ? "text-gold-500" : "text-white/15") + '" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>';
+    }
+    return s;
+  }
+
+  var PHOTOS = {
+    battery: "Photo/257c38ab42bea4d7bdbdb8b9f8016b4c.jpg",
+    wiring: "Photo/8a74538d586337f5a8244c84252160ab.jpg",
+    engine: "Photo/8d0db3f7d724d731cab24a7f2514c686.jpg",
+    gloves: "Photo/f1201902a6617881cbe31467ebb96e6e.jpg"
+  };
+
+  /* ---------------- Video reviews ---------------- */
+  var videoReviews = [
+    { name: "Айдос К.", car: "Toyota Camry", img: PHOTOS.engine, dur: "0:38", quote: { ru: "Диагностику сделали прямо во дворе, за 20 минут нашли проблему.", kk: "Диагностиканы ауылымыздың өзінде жасады, 20 минутта мәселені тапты." } },
+    { name: "Мадина С.", car: "Hyundai Tucson", img: PHOTOS.battery, dur: "0:45", quote: { ru: "Ночью машина не завелась, мастер приехал за 35 минут.", kk: "Түнде көлік қосылмады, шебер 35 минутта жетті." } },
+    { name: "Сергей В.", car: "Lexus RX", img: PHOTOS.gloves, dur: "0:52", quote: { ru: "Сигнализацию настроили быстро, объяснили каждый шаг.", kk: "Сигнализацияны жылдам баптады, әр қадамды түсіндірді." } },
+    { name: "Гульнара Б.", car: "Kia Sportage", img: PHOTOS.wiring, dur: "0:31", quote: { ru: "Приятно удивила честная цена без накруток.", kk: "Артық қоспай, әділ баға ұсынғаны қуантты." } },
+    { name: "Данияр Ж.", car: "Nissan X-Trail", img: PHOTOS.engine, dur: "0:40", quote: { ru: "Проводку нашли и починили там, где другие сдались.", kk: "Басқалар таба алмаған сым ақауын тауып жөндеді." } },
+    { name: "Елена П.", car: "BMW 5", img: PHOTOS.battery, dur: "0:29", quote: { ru: "Работают действительно круглосуточно, проверено лично.", kk: "Шынымен тәулік бойы жұмыс істейді, өзім тексердім." } },
+    { name: "Нурлан А.", car: "VW Polo", img: PHOTOS.gloves, dur: "0:36", quote: { ru: "Аккумулятор заменили прямо на парковке за 15 минут.", kk: "Аккумуляторды тұрақтың өзінде 15 минутта ауыстырды." } }
+  ];
+
+  function renderVideoCard(item) {
+    var wrap = el("div", "");
+    wrap.style.width = "clamp(260px, 78vw, 320px)";
+    wrap.innerHTML =
+      '<div class="relative rounded-2xl overflow-hidden bg-navy-900 border border-white/10 shadow-card-dark group cursor-pointer">' +
+        '<div class="relative h-56 overflow-hidden">' +
+          '<img src="' + item.img + '" class="w-full h-full object-cover" alt="' + item.name + '" loading="lazy">' +
+          '<div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/15 to-transparent"></div>' +
+          '<button class="video-play-btn absolute inset-0 flex items-center justify-center" aria-label="Play video">' +
+            '<span class="w-14 h-14 rounded-full bg-white/95 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><svg class="w-6 h-6 text-navy-900 ml-1" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>' +
+          '</button>' +
+          '<span class="absolute bottom-3 left-3 bg-navy-950/80 text-white text-[11px] font-semibold px-2 py-1 rounded-md">' + item.dur + '</span>' +
+        '</div>' +
+        '<div class="p-4">' +
+          '<div class="flex items-center justify-between mb-1.5"><span class="font-display font-bold text-[14px] text-white">' + item.name + '</span><span class="flex gap-0.5">' + starsHtml(5) + '</span></div>' +
+          '<span class="text-[12px] text-gold-500 font-semibold block mb-1.5">' + item.car + '</span>' +
+          '<p class="text-[12px] text-white/50 leading-[1.6]">' + item.quote[currentLang] + '</p>' +
+        '</div>' +
+      '</div>';
+    wrap.querySelector(".video-play-btn").addEventListener("click", function (e) { e.stopPropagation(); openLightbox(); });
+    return wrap;
+  }
+
+  /* ---------------- Text reviews ---------------- */
+  var textReviews = [
+    { name: "Тимур Е.", car: "Toyota Land Cruiser", rating: 5, quote: { ru: "Обратился ночью — приехали быстро, диагностику провели на планшете, всё объяснили. Рекомендую.", kk: "Түнде хабарластым — жылдам келді, планшетпен диагностика жасап, бәрін түсіндірді. Ұсынамын." } },
+    { name: "Асель Р.", car: "Chevrolet Cobalt", rating: 5, quote: { ru: "Сигнализация перестала работать, приехали за 40 минут и всё настроили.", kk: "Сигнализация істен шықты, 40 минутта келіп бәрін баптап берді." } },
+    { name: "Виктор М.", car: "Mercedes E-class", rating: 5, quote: { ru: "Дорогая машина — доверил без сомнений, работают аккуратно и профессионально.", kk: "Қымбат көлік — сеніп тапсырдым, мұқият әрі кәсіби жұмыс істейді." } },
+    { name: "Жанна К.", car: "Hyundai Accent", rating: 4, quote: { ru: "Хорошая работа, но пришлось немного подождать из-за пробок. В остальном всё отлично.", kk: "Жұмыс жақсы, тек кептелістен сәл күттірді. Қалғаны керемет." } },
+    { name: "Азамат Н.", car: "Kia Rio", rating: 5, quote: { ru: "Цены реально «от», как и обещали. Без скрытых доплат.", kk: "Бағасы шынымен «...-дан» болды, айтқандай. Жасырын үстеме жоқ." } },
+    { name: "Ольга Т.", car: "Toyota RAV4", rating: 5, quote: { ru: "Мультимедиа перестала включаться — за час всё вернули к жизни.", kk: "Мультимедиа қосылмай қалды — бір сағатта қалпына келтірді." } },
+    { name: "Бауыржан С.", car: "Lexus LX", rating: 5, quote: { ru: "Профессиональный подход, наряд-заказ на каждую работу — видно, что не разово работают.", kk: "Кәсіби қарым-қатынас, әр жұмысқа наряд-заказ береді — бір реттік емес екені көрінеді." } },
+    { name: "Инна Д.", car: "Nissan Almera", rating: 5, quote: { ru: "Генератор заменили в тот же день. Гарантию дали письменно.", kk: "Генераторды сол күні ауыстырды. Кепілдікті жазбаша берді." } }
+  ];
+
+  function renderTextCard(item) {
+    var wrap = el("div", "");
+    wrap.style.width = "clamp(270px, 82vw, 340px)";
+    wrap.innerHTML =
+      '<div class="h-full bg-navy-900 border border-white/10 rounded-2xl p-5 sm:p-6 shadow-card-dark flex flex-col">' +
+        '<div class="flex items-center gap-3 mb-3">' +
+          '<span class="w-11 h-11 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center font-display font-extrabold text-navy-950 shrink-0">' + initials(item.name) + '</span>' +
+          '<div><div class="font-display font-bold text-[14px] text-white">' + item.name + '</div><div class="text-[12px] text-gold-500 font-semibold">' + item.car + '</div></div>' +
+        '</div>' +
+        '<div class="flex gap-0.5 mb-3">' + starsHtml(item.rating) + '</div>' +
+        '<p class="text-[13px] text-white/65 leading-[1.7] flex-1">' + item.quote[currentLang] + '</p>' +
+      '</div>';
+    return wrap;
+  }
+
+  /* ---------------- Audio reviews ---------------- */
+  var audioReviews = [
+    { name: "Ержан Б.", car: "Toyota Camry", dur: "0:52" },
+    { name: "Светлана И.", car: "Hyundai Sonata", dur: "1:04" },
+    { name: "Марат Қ.", car: "Kia Sorento", dur: "0:38" },
+    { name: "Дина А.", car: "VW Tiguan", dur: "0:47" },
+    { name: "Игорь Л.", car: "Lexus GX", dur: "1:12" },
+    { name: "Сауле Ж.", car: "Toyota Corolla", dur: "0:33" }
+  ];
+
+  var currentPlayingAudio = null;
+  function renderAudioCard(item) {
+    var wrap = el("div", "");
+    wrap.style.width = "clamp(250px, 78vw, 300px)";
+    var bars = "";
+    for (var i = 0; i < 20; i++) {
+      var h = 25 + Math.round(Math.abs(Math.sin(i * 1.7)) * 75);
+      bars += '<span class="audio-bar w-[3px] rounded-full inline-block" style="height:' + h + '%"></span>';
+    }
+    wrap.innerHTML =
+      '<div class="audio-card bg-navy-900 border border-white/10 rounded-2xl p-5 shadow-card-dark">' +
+        '<div class="flex items-center gap-3 mb-4">' +
+          '<span class="w-11 h-11 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center font-display font-extrabold text-navy-950 shrink-0">' + initials(item.name) + '</span>' +
+          '<div><div class="font-display font-bold text-[14px] text-white">' + item.name + '</div><div class="text-[12px] text-gold-500 font-semibold">' + item.car + '</div></div>' +
+        '</div>' +
+        '<div class="flex items-center gap-3">' +
+          '<button class="audio-play-btn w-10 h-10 rounded-full bg-gold-500 text-navy-950 flex items-center justify-center shrink-0 hover:brightness-110 transition-all" aria-label="Play audio">' +
+            '<svg class="play-icon w-4 h-4 ml-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+            '<svg class="pause-icon w-4 h-4 hidden" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/></svg>' +
+          '</button>' +
+          '<div class="flex items-end gap-[3px] h-8 flex-1 overflow-hidden">' + bars + '</div>' +
+          '<span class="audio-dur text-[11px] text-white/40 font-semibold shrink-0">' + item.dur + '</span>' +
+        '</div>' +
+      '</div>';
+
+    var card = wrap.querySelector(".audio-card");
+    var btn = wrap.querySelector(".audio-play-btn");
+    var playIcon = wrap.querySelector(".play-icon");
+    var pauseIcon = wrap.querySelector(".pause-icon");
+    var timer = null;
+    var durMs = (function () {
+      var parts = item.dur.split(":");
+      return (parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10)) * 1000;
+    })();
+
+    function stopThis() {
+      card.classList.remove("playing");
+      playIcon.classList.remove("hidden");
+      pauseIcon.classList.add("hidden");
+      clearTimeout(timer);
+      if (currentPlayingAudio === stopThis) currentPlayingAudio = null;
+    }
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var isPlaying = card.classList.contains("playing");
+      if (currentPlayingAudio && currentPlayingAudio !== stopThis) currentPlayingAudio();
+      if (isPlaying) { stopThis(); return; }
+      card.classList.add("playing");
+      playIcon.classList.add("hidden");
+      pauseIcon.classList.remove("hidden");
+      currentPlayingAudio = stopThis;
+      timer = setTimeout(stopThis, Math.min(durMs, 6000));
+    });
+    return wrap;
+  }
+
+  /* ---------------- Gallery ---------------- */
+  var galleryItems = [
+    { img: PHOTOS.battery, cap: { ru: "Диагностика аккумулятора на месте", kk: "Аккумуляторды жерінде диагностикалау" } },
+    { img: PHOTOS.wiring, cap: { ru: "Поиск неисправности проводки", kk: "Өткізгіш желі ақауын іздеу" } },
+    { img: PHOTOS.engine, cap: { ru: "Диагностика двигателя", kk: "Қозғалтқышты диагностикалау" } },
+    { img: PHOTOS.gloves, cap: { ru: "Проверка электроцепи мультиметром", kk: "Мультиметрмен электр тізбегін тексеру" } },
+    { img: "https://placehold.co/640x480/101B33/F2B33D?text=%D0%A4%D0%BE%D1%82%D0%BE+%D1%81%D0%BA%D0%BE%D1%80%D0%BE", cap: { ru: "Установка сигнализации", kk: "Сигнализация орнату" } },
+    { img: "https://placehold.co/640x480/101B33/F2B33D?text=%D0%A4%D0%BE%D1%82%D0%BE+%D1%81%D0%BA%D0%BE%D1%80%D0%BE", cap: { ru: "Ремонт генератора", kk: "Генераторды жөндеу" } },
+    { img: "https://placehold.co/640x480/101B33/F2B33D?text=%D0%A4%D0%BE%D1%82%D0%BE+%D1%81%D0%BA%D0%BE%D1%80%D0%BE", cap: { ru: "Выезд в любой район", kk: "Кез келген ауданға шығу" } },
+    { img: "https://placehold.co/640x480/101B33/F2B33D?text=%D0%A4%D0%BE%D1%82%D0%BE+%D1%81%D0%BA%D0%BE%D1%80%D0%BE", cap: { ru: "Гарантийный талон клиенту", kk: "Клиентке кепілдік талоны" } }
+  ];
+
+  function renderGalleryCard(item) {
+    var wrap = el("div", "");
+    wrap.style.width = "clamp(240px, 70vw, 300px)";
+    wrap.innerHTML =
+      '<div class="relative h-72 rounded-2xl overflow-hidden border border-white/10 shadow-card-dark group">' +
+        '<img src="' + item.img + '" class="w-full h-full object-cover mix-blend-normal group-hover:scale-105 transition-transform duration-700" alt="' + item.cap[currentLang] + '" loading="lazy">' +
+        '<div class="absolute inset-0 bg-gradient-to-t from-navy-950/90 via-navy-950/10 to-transparent"></div>' +
+        '<p class="absolute bottom-4 left-4 right-4 text-white text-[13px] font-semibold leading-snug">' + item.cap[currentLang] + '</p>' +
+      '</div>';
+    return wrap;
+  }
+
+  /* ---------------- init carousels ---------------- */
+  new Carousel({ name: "video", viewportId: "carousel-video", trackId: "track-video", items: videoReviews, renderCard: renderVideoCard, gap: 20 });
+  new Carousel({ name: "text", viewportId: "carousel-text", trackId: "track-text", items: textReviews, renderCard: renderTextCard, gap: 20 });
+  new Carousel({ name: "audio", viewportId: "carousel-audio", trackId: "track-audio", items: audioReviews, renderCard: renderAudioCard, gap: 20 });
+  new Carousel({ name: "gallery", viewportId: "carousel-gallery", trackId: "track-gallery", items: galleryItems, renderCard: renderGalleryCard, gap: 20, intervalMs: 4500 });
+
+  /* ---------------- initial language paint ---------------- */
+  applyLanguage(currentLang);
+})();
+</script>
+</body>
+</html>
