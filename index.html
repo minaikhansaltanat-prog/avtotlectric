@@ -266,13 +266,19 @@
 <!-- ============ HERO ============ -->
 <section class="relative min-h-[92vh] flex items-end overflow-hidden grain">
   <div class="absolute inset-0 z-0">
-    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" poster="Photo/8d0db3f7d724d731cab24a7f2514c686.jpg">
+    <video id="heroVideo" class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline preload="auto" poster="Photo/8d0db3f7d724d731cab24a7f2514c686.jpg">
       <source src="ava9.mp4" type="video/mp4">
     </video>
     <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/70 to-navy-950/35"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-navy-950/80 via-navy-950/10 to-navy-950/60"></div>
     <div class="absolute inset-0" style="background: radial-gradient(60% 50% at 15% 90%, rgba(242,179,61,0.14), transparent), radial-gradient(45% 40% at 90% 10%, rgba(32,51,85,0.5), transparent);"></div>
   </div>
+
+  <button id="heroSoundBtn" type="button" aria-label="Дыбысты қосу/өшіру" aria-pressed="false"
+    class="absolute z-20 top-[84px] right-4 sm:top-[100px] sm:right-6 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-navy-950/60 backdrop-blur-md border border-white/15 hover:border-gold-500/50 hover:bg-navy-950/80 flex items-center justify-center transition-all active:scale-95">
+    <svg id="soundOnIcon" class="hidden w-5 h-5 text-gold-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M11 5 6 9H2v6h4l5 4V5z" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg id="soundOffIcon" class="w-5 h-5 text-white/80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M11 5 6 9H2v6h4l5 4V5z" stroke-linecap="round" stroke-linejoin="round"/><path d="m17 9 5 6M22 9l-5 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
 
   <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 pt-40 pb-12 sm:pb-16 lg:pb-20">
     <div class="grid lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-14 items-end">
@@ -399,7 +405,23 @@
       <p class="text-navy-500 mt-3 leading-[1.7]" data-i18n="services.subtitle">От экспресс-диагностики до сложного ремонта проводки — работаем с любой маркой авто</p>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+    <button type="button" data-ecu-open class="reveal group relative w-full text-left bg-navy-900 border border-gold-500/20 hover:border-gold-500/50 rounded-3xl overflow-hidden shadow-card-dark grid md:grid-cols-2 mb-6 sm:mb-8 transition-all">
+      <div class="relative h-52 md:h-auto overflow-hidden">
+        <img src="Photo/ecu-remont-nissan.webp" alt="Ремонт ЭБУ автомобиля" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-navy-950/85 via-navy-950/10 to-transparent mix-blend-multiply"></div>
+      </div>
+      <div class="p-6 sm:p-8 flex flex-col justify-center">
+        <span class="inline-flex items-center gap-2 text-gold-500 font-display font-bold text-xs sm:text-sm tracking-widest uppercase mb-3" data-i18n="svc.ecu.kicker">Электроника</span>
+        <h3 class="font-display font-extrabold text-xl sm:text-2xl text-white mb-2 tracking-tight" data-i18n="svc.ecu.title">Ремонт ЭБУ автомобиля</h3>
+        <p class="text-white/60 text-[13px] sm:text-sm leading-[1.7] mb-5 max-w-md" data-i18n="svc.ecu.desc">Диагностика, ремонт, перепрошивка и чип-тюнинг блока управления любой марки — с гарантией на работу</p>
+        <span class="inline-flex items-center gap-2 font-display font-extrabold text-navy-950 bg-gold-500 group-hover:bg-gold-400 text-sm rounded-full px-5 py-2.5 w-fit transition-all group-hover:gap-2.5">
+          <span data-i18n="svc.ecu.more">Подробнее</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </button>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
       <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
         <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
           <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 8h10M7 12h6" stroke-linecap="round"/></svg>
@@ -442,19 +464,27 @@
       </div>
       <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
         <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
-          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 18h6M10 3h4l1 4h-6l1-4zM7 7h10l1 6a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4l1-6z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 2.5h6v3H9z"/><path d="M8.5 12.5 11 15l4.5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.light.title">Световая система</h3>
-        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.light.desc">Фары, ксенон/LED, регулировка света и установка дополнительной оптики</p>
-        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.light.price">Цена после диагностики</span>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.check.title">Проверка авто перед покупкой</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.check.desc">Полная диагностика электрики и электроники перед сделкой — поможем избежать скрытых проблем</p>
+        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.check.price">Цена после диагностики</span>
       </div>
       <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
         <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
-          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="8" cy="12" r="1.6"/><path d="M13 10h5M13 14h5" stroke-linecap="round"/></svg>
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="1.8"/><path d="M12 4v3.2M12 16.8V20M4.5 8l3 1.7M16.5 14.3l3 1.7M19.5 8l-3 1.7M7.5 14.3l-3 1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.media.title">Мультимедиа и аудио</h3>
-        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.media.desc">Магнитола, камера заднего вида, парктроник — подбор и установка</p>
-        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.media.price">Цена после диагностики</span>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.pickup.title">Подбор авто</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.pickup.desc">Выезжаем с вами на осмотр и проверяем электрику перед покупкой — покупайте без рисков</p>
+        <span class="font-display font-extrabold text-navy-900 text-sm" data-i18n="svc.pickup.price">Цена после диагностики</span>
+      </div>
+      <div class="reveal group bg-[#F7F8FB] hover:bg-white border border-navy-900/5 hover:shadow-card rounded-2xl p-5 sm:p-6 transition-all">
+        <div class="w-12 h-12 rounded-xl bg-navy-900 flex items-center justify-center mb-4 group-hover:bg-gold-500 transition-colors">
+          <svg class="w-6 h-6 text-gold-500 group-hover:text-navy-900 transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 7a4 4 0 0 1-5.4 5.4L6 18l-2-2 5.6-5.6A4 4 0 0 1 15 4l-2.5 2.5 2 2L17 6z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="font-display font-bold text-[15px] text-navy-900 mb-1.5" data-i18n="svc.urgent.title">Срочный ремонт</h3>
+        <p class="text-[13px] text-navy-500 leading-[1.6] mb-3" data-i18n="svc.urgent.desc">Устраняем поломку на месте в кратчайшие сроки. Выезд мастера — в течение 30 минут</p>
+        <span class="font-display font-extrabold text-gold-600 text-sm" data-i18n="svc.urgent.price">от 30 минут</span>
       </div>
       <div class="reveal group bg-navy-900 hover:bg-navy-800 border border-navy-900 rounded-2xl p-5 sm:p-6 transition-all">
         <div class="w-12 h-12 rounded-xl bg-gold-500 flex items-center justify-center mb-4">
@@ -913,6 +943,76 @@
   </div>
 </div>
 
+<!-- ECU repair modal -->
+<div id="ecuModal" class="fixed inset-0 z-[95] hidden items-center justify-center p-4 sm:p-8">
+  <button id="ecuModalClose" aria-label="Закрыть" class="absolute top-5 right-5 sm:top-8 sm:right-8 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-10">
+    <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"/></svg>
+  </button>
+  <div class="relative w-full max-w-3xl max-h-[88vh] overflow-y-auto no-scrollbar bg-navy-900 rounded-3xl shadow-card-dark border border-white/10">
+    <div class="relative h-48 sm:h-64 overflow-hidden rounded-t-3xl">
+      <img src="Photo/ecu-remont-nissan.webp" alt="Ремонт ЭБУ автомобиля" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/40 to-transparent mix-blend-multiply"></div>
+      <div class="absolute bottom-5 left-6 right-6">
+        <span class="inline-flex items-center gap-2 text-gold-500 font-display font-bold text-xs tracking-widest uppercase mb-2" data-i18n="svc.ecu.kicker">Электроника</span>
+        <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight" data-i18n="ecu.modal.title">Ремонт ЭБУ автомобиля</h3>
+      </div>
+    </div>
+    <div class="p-6 sm:p-8">
+      <p class="text-white/70 text-[14px] sm:text-[15px] leading-[1.7] mb-7" data-i18n="ecu.modal.intro">ЭБУ — «мозг» автомобиля: управляет двигателем, коробкой передач, системами безопасности и электроникой. Ошибка прошивки или повреждение блока — и машина работает нестабильно или не заводится вообще.</p>
+
+      <div class="grid sm:grid-cols-2 gap-x-6 gap-y-7 mb-7">
+        <div>
+          <h4 class="font-display font-bold text-white text-[15px] mb-3" data-i18n="ecu.modal.g1.title">Что делаем</h4>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g1.i1">Диагностика и стендовая проверка ЭБУ</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g1.i2">Полный ремонт: восстановление дорожек, компонентов и процессора</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g1.i3">Перепрошивка, обновление и адаптация ПО</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g1.i4">Клонирование ЭБУ — перенос данных на новый блок</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g1.i5">Ремонт и восстановление иммобилайзера</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g1.i6">Прописка ЭБУ на автомобиль</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-white text-[15px] mb-3" data-i18n="ecu.modal.g2.title">Чип-тюнинг</h4>
+          <ul class="space-y-2.5 mb-6">
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g2.i1">Прошивки Евро-2, Евро-0, Stage-1</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g2.i2">Улучшение отклика педали газа</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g2.i3">Оптимизация расхода топлива</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g2.i4">Безопасные калибровки под конкретный двигатель</span></li>
+          </ul>
+          <h4 class="font-display font-bold text-white text-[15px] mb-3" data-i18n="ecu.modal.g3.title">Удаление ошибок катализатора</h4>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g3.i1">Удаление и отключение ошибок катализатора</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g3.i2">Отключение второго лямбда-зонда</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g3.i3">Устранение детонации и рывков</span></li>
+            <li class="flex items-start gap-2.5"><svg class="w-4 h-4 text-gold-500 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9"/></svg><span class="text-white/65 text-[13px] leading-[1.6]" data-i18n="ecu.modal.g3.i4">Устранение ошибки Check Engine</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rounded-2xl overflow-hidden mb-7 h-48 sm:h-56">
+        <img src="Photo/ecu-remont-volvo-ktag.jpg" alt="Чип-тюнинг ЭБУ программатором K-TAG" class="w-full h-full object-cover">
+      </div>
+
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-5 mb-7">
+        <h4 class="font-display font-bold text-white text-[14px] mb-2" data-i18n="ecu.modal.brands.title">Работаем со всеми марками</h4>
+        <p class="text-white/55 text-[13px] leading-[1.6]" data-i18n="ecu.modal.brands.text">Mercedes, BMW, Audi, Toyota, Lexus, Hyundai, Kia, VAG, Chevrolet, Opel, ВАЗ, УАЗ и другие</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-x-4 gap-y-3 mb-8">
+        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span><span class="text-white/70 text-[13px]" data-i18n="ecu.modal.f1">Профессиональное оборудование</span></div>
+        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span><span class="text-white/70 text-[13px]" data-i18n="ecu.modal.f2">Большой опыт в автоэлектронике</span></div>
+        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span><span class="text-white/70 text-[13px]" data-i18n="ecu.modal.f3">Гарантия на ремонт и прошивку</span></div>
+        <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-gold-500 shrink-0"></span><span class="text-white/70 text-[13px]" data-i18n="ecu.modal.f4">Выездное обслуживание</span></div>
+      </div>
+
+      <a href="#" data-wa-btn data-wa-msg="ecu.wamsg" class="flex items-center justify-center gap-2 w-full rounded-xl bg-gold-500 hover:bg-gold-400 text-navy-950 font-display font-extrabold text-sm py-3.5 transition-all active:scale-[0.97]">
+        <span data-i18n="ecu.modal.cta">Записаться на ремонт ЭБУ</span>
+      </a>
+    </div>
+  </div>
+</div>
+
 <script>
 const TRANSLATIONS = {
   "nav.services": {ru:"Услуги", kk:"Қызметтер"},
@@ -977,12 +1077,46 @@ const TRANSLATIONS = {
   "svc.alarm.title": {ru:"Сигнализация и иммобилайзер", kk:"Сигнализация мен иммобилайзер"},
   "svc.alarm.desc": {ru:"Установка, настройка, программирование ключ-карт для любых марок", kk:"Кез келген маркаға орнату, баптау, кілт-карта бағдарламалау"},
   "svc.alarm.price": {ru:"от 25 000 ₸", kk:"25 000 ₸-дан"},
-  "svc.light.title": {ru:"Световая система", kk:"Жарық жүйесі"},
-  "svc.light.desc": {ru:"Фары, ксенон/LED, регулировка света и установка дополнительной оптики", kk:"Фаралар, ксенон/LED, жарықты реттеу және қосымша оптика орнату"},
-  "svc.light.price": {ru:"Цена после диагностики", kk:"Диагностикадан кейін баға"},
-  "svc.media.title": {ru:"Мультимедиа и аудио", kk:"Мультимедиа және аудио"},
-  "svc.media.desc": {ru:"Магнитола, камера заднего вида, парктроник — подбор и установка", kk:"Магнитола, артқы көрініс камерасы, парктроник — таңдау және орнату"},
-  "svc.media.price": {ru:"Цена после диагностики", kk:"Диагностикадан кейін баға"},
+  "svc.check.title": {ru:"Проверка авто перед покупкой", kk:"Сатып алу алдында тексеру"},
+  "svc.check.desc": {ru:"Полная диагностика электрики и электроники перед сделкой — поможем избежать скрытых проблем", kk:"Мәміле алдында электр мен электрониканың толық диагностикасы — жасырын ақаулардан сақтандырамыз"},
+  "svc.check.price": {ru:"Цена после диагностики", kk:"Диагностикадан кейін баға"},
+  "svc.pickup.title": {ru:"Подбор авто", kk:"Автокөлік таңдау"},
+  "svc.pickup.desc": {ru:"Выезжаем с вами на осмотр и проверяем электрику перед покупкой — покупайте без рисков", kk:"Сатып алу алдында сізбен бірге көлікті қарап, электрикасын тексереміз — тәуекелсіз сатып алыңыз"},
+  "svc.pickup.price": {ru:"Цена после диагностики", kk:"Диагностикадан кейін баға"},
+  "svc.urgent.title": {ru:"Срочный ремонт", kk:"Шұғыл жөндеу"},
+  "svc.urgent.desc": {ru:"Устраняем поломку на месте в кратчайшие сроки. Выезд мастера — в течение 30 минут", kk:"Ақауды ең қысқа мерзімде жерінде жоямыз. Шебердің шығуы — 30 минут ішінде"},
+  "svc.urgent.price": {ru:"от 30 минут", kk:"30 минуттан"},
+  "svc.ecu.kicker": {ru:"Электроника", kk:"Электроника"},
+  "svc.ecu.title": {ru:"Ремонт ЭБУ автомобиля", kk:"Автокөліктің ЭБУ жөндеу"},
+  "svc.ecu.desc": {ru:"Диагностика, ремонт, перепрошивка и чип-тюнинг блока управления любой марки — с гарантией на работу", kk:"Кез келген маркадағы басқару блогының диагностикасы, жөндеуі, қайта прошивкасы және чип-тюнингі — жұмысқа кепілдікпен"},
+  "svc.ecu.more": {ru:"Подробнее", kk:"Толығырақ"},
+  "ecu.modal.title": {ru:"Ремонт ЭБУ автомобиля", kk:"Автокөліктің ЭБУ жөндеу"},
+  "ecu.modal.intro": {ru:"ЭБУ — «мозг» автомобиля: управляет двигателем, коробкой передач, системами безопасности и электроникой. Ошибка прошивки или повреждение блока — и машина работает нестабильно или не заводится вообще.", kk:"ЭБУ — автокөліктің «миы»: қозғалтқышты, беріліс қорабын, қауіпсіздік жүйелерін және электрониканы басқарады. Прошивка қатесі немесе блоктың зақымдалуы көлікті тұрақсыз жұмыс істетеді немесе мүлдем қосылмай қалады."},
+  "ecu.modal.g1.title": {ru:"Что делаем", kk:"Не істейміз"},
+  "ecu.modal.g1.i1": {ru:"Диагностика и стендовая проверка ЭБУ", kk:"ЭБУ диагностикасы және стендте тексеру"},
+  "ecu.modal.g1.i2": {ru:"Полный ремонт: восстановление дорожек, компонентов и процессора", kk:"Толық жөндеу: жолақтарды, компоненттерді және процессорды қалпына келтіру"},
+  "ecu.modal.g1.i3": {ru:"Перепрошивка, обновление и адаптация ПО", kk:"Қайта прошивка, бағдарламалық жасақтаманы жаңарту және бейімдеу"},
+  "ecu.modal.g1.i4": {ru:"Клонирование ЭБУ — перенос данных на новый блок", kk:"ЭБУ клондау — деректерді жаңа блокқа көшіру"},
+  "ecu.modal.g1.i5": {ru:"Ремонт и восстановление иммобилайзера", kk:"Иммобилайзерді жөндеу және қалпына келтіру"},
+  "ecu.modal.g1.i6": {ru:"Прописка ЭБУ на автомобиль", kk:"ЭБУ-ды автокөлікке тіркеу"},
+  "ecu.modal.g2.title": {ru:"Чип-тюнинг", kk:"Чип-тюнинг"},
+  "ecu.modal.g2.i1": {ru:"Прошивки Евро-2, Евро-0, Stage-1", kk:"Евро-2, Евро-0, Stage-1 прошивкалары"},
+  "ecu.modal.g2.i2": {ru:"Улучшение отклика педали газа", kk:"Газ педалінің жауап беруін жақсарту"},
+  "ecu.modal.g2.i3": {ru:"Оптимизация расхода топлива", kk:"Отын шығынын оңтайландыру"},
+  "ecu.modal.g2.i4": {ru:"Безопасные калибровки под конкретный двигатель", kk:"Нақты қозғалтқышқа арналған қауіпсіз калибровкалар"},
+  "ecu.modal.g3.title": {ru:"Удаление ошибок катализатора", kk:"Катализатор қателерін жою"},
+  "ecu.modal.g3.i1": {ru:"Удаление и отключение ошибок катализатора", kk:"Катализатор қателерін жою және өшіру"},
+  "ecu.modal.g3.i2": {ru:"Отключение второго лямбда-зонда", kk:"Екінші лямбда-зондты өшіру"},
+  "ecu.modal.g3.i3": {ru:"Устранение детонации и рывков", kk:"Детонация мен серпілуді жою"},
+  "ecu.modal.g3.i4": {ru:"Устранение ошибки Check Engine", kk:"Check Engine қатесін жою"},
+  "ecu.modal.brands.title": {ru:"Работаем со всеми марками", kk:"Барлық маркамен жұмыс істейміз"},
+  "ecu.modal.brands.text": {ru:"Mercedes, BMW, Audi, Toyota, Lexus, Hyundai, Kia, VAG, Chevrolet, Opel, ВАЗ, УАЗ и другие", kk:"Mercedes, BMW, Audi, Toyota, Lexus, Hyundai, Kia, VAG, Chevrolet, Opel, ВАЗ, УАЗ және басқалары"},
+  "ecu.modal.f1": {ru:"Профессиональное оборудование", kk:"Кәсіби жабдық"},
+  "ecu.modal.f2": {ru:"Большой опыт в автоэлектронике", kk:"Автоэлектроникада үлкен тәжірибе"},
+  "ecu.modal.f3": {ru:"Гарантия на ремонт и прошивку", kk:"Жөндеу мен прошивкаға кепілдік"},
+  "ecu.modal.f4": {ru:"Выездное обслуживание", kk:"Шығу арқылы қызмет көрсету"},
+  "ecu.modal.cta": {ru:"Записаться на ремонт ЭБУ", kk:"ЭБУ жөндеуге жазылу"},
+  "ecu.wamsg": {ru:"Здравствуйте! Хочу записаться на ремонт ЭБУ.", kk:"Сәлеметсіз бе! ЭБУ жөндеуге жазылғым келеді."},
   "svc.sos.title": {ru:"Срочный выезд 24/7", kk:"Шұғыл шығу 24/7"},
   "svc.sos.desc": {ru:"Выезжаем в любой район Алматы круглосуточно, без выходных", kk:"Алматының кез келген ауданына тәулік бойы, демалыссыз шығамыз"},
   "svc.sos.price": {ru:"от 40 минут", kk:"40 минуттан"},
@@ -1179,7 +1313,7 @@ const TRANSLATIONS = {
     a.addEventListener("click", closeMenu);
   });
   window.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { closeMenu(); closeLightbox(); }
+    if (e.key === "Escape") { closeMenu(); closeLightbox(); closeEcuModal(); }
   });
 
   /* ---------------- FAQ accordion ---------------- */
@@ -1262,12 +1396,94 @@ const TRANSLATIONS = {
   document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
   lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
 
-  /* ---------------- Hero video autoplay fallback ---------------- */
-  var heroVideo = document.querySelector("section video[autoplay]");
-  if (heroVideo) {
+  /* ---------------- ECU repair modal ---------------- */
+  var ecuModal = document.getElementById("ecuModal");
+  function openEcuModal() {
+    ecuModal.classList.remove("hidden");
+    ecuModal.classList.add("flex");
+    document.body.style.overflow = "hidden";
+  }
+  function closeEcuModal() {
+    if (ecuModal.classList.contains("hidden")) return;
+    ecuModal.classList.add("hidden");
+    ecuModal.classList.remove("flex");
+    document.body.style.overflow = mobileMenu.classList.contains("open") ? "hidden" : "";
+  }
+  document.querySelectorAll("[data-ecu-open]").forEach(function (btn) {
+    btn.addEventListener("click", openEcuModal);
+  });
+  document.getElementById("ecuModalClose").addEventListener("click", closeEcuModal);
+  ecuModal.addEventListener("click", function (e) { if (e.target === ecuModal) closeEcuModal(); });
+
+  /* ---------------- Hero video: autoplay + auto sound-on-view ---------------- */
+  var heroVideo = document.getElementById("heroVideo");
+  var heroSoundBtn = document.getElementById("heroSoundBtn");
+  var soundOnIcon = document.getElementById("soundOnIcon");
+  var soundOffIcon = document.getElementById("soundOffIcon");
+  var heroSection = heroVideo ? heroVideo.closest("section") : null;
+
+  if (heroVideo && heroSoundBtn && heroSection) {
+    var userHasGestured = false;
+    var manualOverride = false; // true once the visitor explicitly used the button
+    var heroInView = false;
+
     var tryPlay = function () { heroVideo.play().catch(function () {}); };
     heroVideo.addEventListener("loadeddata", tryPlay);
-    document.addEventListener("click", tryPlay, { once: true });
+
+    function refreshIcon() {
+      var isOn = !heroVideo.muted;
+      soundOnIcon.classList.toggle("hidden", !isOn);
+      soundOffIcon.classList.toggle("hidden", isOn);
+      heroSoundBtn.setAttribute("aria-pressed", isOn ? "true" : "false");
+    }
+
+    function enableSound() {
+      heroVideo.muted = false;
+      tryPlay();
+      refreshIcon();
+    }
+    function disableSound() {
+      heroVideo.muted = true;
+      refreshIcon();
+    }
+
+    // Sound plays automatically once the visitor has interacted with the page
+    // at least once (required by browser autoplay policy) AND the hero video
+    // is actually in view. It mutes itself again once scrolled out of view,
+    // and re-enables automatically when scrolled back — unless the visitor
+    // has explicitly chosen a state with the button.
+    function autoSyncSound() {
+      if (manualOverride || !userHasGestured) return;
+      if (heroInView) enableSound(); else disableSound();
+    }
+
+    // Only events the browser actually counts as a real "user gesture" are
+    // used here (click, keydown, touchend) — wheel/scroll/pointerdown/
+    // touchstart do NOT grant permission to play audio in any real browser,
+    // no matter what JS does, so listening for them silently fails.
+    ["click", "keydown", "touchend"].forEach(function (evt) {
+      window.addEventListener(evt, function onFirstGesture() {
+        if (userHasGestured) return;
+        userHasGestured = true;
+        autoSyncSound();
+      }, { once: true, passive: true });
+    });
+
+    var heroIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        heroInView = entry.isIntersecting;
+        autoSyncSound();
+      });
+    }, { threshold: 0.6 });
+    heroIO.observe(heroSection);
+
+    heroSoundBtn.addEventListener("click", function () {
+      manualOverride = true;
+      userHasGestured = true;
+      if (heroVideo.muted) enableSound(); else disableSound();
+    });
+
+    refreshIcon();
   }
 
   /* ================= CAROUSEL ================= */
