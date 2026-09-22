@@ -265,5 +265,92 @@
     </p>
   </div>
 </footer>
+
+<!-- Тег Google (добавлен при настройке рекламы) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18417801654"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18417801654');
+</script>
+
+<!-- === Отслеживание звонков, WhatsApp и заявок (добавлено при настройке рекламы) === -->
+<script>
+(function () {
+  "use strict";
+  var CONV = {
+    call:     'AW-18417801654/7MBICJm9-v4cELazpc5E',
+    whatsapp: 'AW-18417801654/2M4fCP68-v4cELazpc5E',
+    form:     'AW-18417801654/no3YCO2z-v4cELazpc5E'
+  };
+  // Адрес обработчика заявок (Google Apps Script). Пока пусто — заявки только считаются в рекламе.
+  var LEAD_URL = 'https://script.google.com/macros/s/AKfycbzC7JFgA8xrCJUMZ8VxD5pdblXT_zLZH3Qy2HLd2cYItw5YH9WsBz1xDVLK0CXYSdh7Dg/exec';
+
+  function fire(label) {
+    try { gtag('event', 'conversion', { send_to: label }); } catch (e) {}
+  }
+  function send(params) {
+    if (!LEAD_URL) return;
+    try {
+      var body = new URLSearchParams(params);
+      if (navigator.sendBeacon) navigator.sendBeacon(LEAD_URL, body);
+      else fetch(LEAD_URL, { method: 'POST', body: body, mode: 'no-cors', keepalive: true });
+    } catch (e) {}
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target && e.target.closest ? e.target.closest('a') : null;
+    if (!a || !a.href) return;
+    if (a.href.indexOf('tel:') === 0) fire(CONV.call);
+    else if (a.href.indexOf('wa.me') > -1 || a.href.indexOf('whatsapp') > -1) fire(CONV.whatsapp);
+  }, true);
+
+  function hookForm(form) {
+    if (!form || form.dataset.leadHooked) return;
+    form.dataset.leadHooked = '1';
+    form.addEventListener('submit', function () {
+      var n = form.querySelector('[name="name"]'), p = form.querySelector('[name="phone"]');
+      var name = n ? n.value.trim() : '', phone = p ? p.value.trim() : '';
+      if (!name || !phone) return;
+      fire(CONV.form);
+      send({ type: 'lead', name: name, phone: phone, page: location.pathname,
+             gclid: getGclid(), ua: navigator.userAgent.slice(0, 120) });
+    }, true);
+  }
+  ['heroForm', 'footerForm'].forEach(function (id) { hookForm(document.getElementById(id)); });
+
+  function getGclid() {
+    try { return new URLSearchParams(location.search).get('gclid') || sessionStorage.getItem('gclid') || ''; }
+    catch (e) { return ''; }
+  }
+  try {
+    var g = new URLSearchParams(location.search).get('gclid');
+    if (g) { sessionStorage.setItem('gclid', g); send({ type: 'click', gclid: g, page: location.pathname, ua: navigator.userAgent.slice(0, 120) }); }
+  } catch (e) {}
+
+  // Фоновое видео весит 12 МБ: на телефонах и медленной сети показываем только картинку
+  try {
+    var v = document.getElementById('heroVideo');
+    var c = navigator.connection || {};
+    var slow = c.saveData || /2g/.test(c.effectiveType || '');
+    if (v) {
+      if (window.innerWidth >= 1024 && !slow) {
+        v.setAttribute('preload', 'auto');
+        v.load();
+        var pr = v.play();
+        if (pr && pr.catch) pr.catch(function () {});
+      } else {
+        // убираем источник, чтобы файл не скачивался вообще; остаётся постер
+        var s = v.querySelectorAll('source');
+        for (var i = 0; i < s.length; i++) s[i].parentNode.removeChild(s[i]);
+        v.removeAttribute('src');
+        v.load();
+        v.play = function () { return Promise.resolve(); };
+      }
+    }
+  } catch (e) {}
+})();
+</script>
 </body>
 </html>
